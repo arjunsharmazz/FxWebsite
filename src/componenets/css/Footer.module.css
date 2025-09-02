@@ -1,0 +1,85 @@
+.footer {
+  padding: 2.5rem 2rem 1.5rem;
+  background: transparent; /* fixed background visible */
+  color: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+  position: relative;  /* ✅ Add this */
+  z-index: 50;         /* ✅ High value so it stays clickable */
+}
+
+/* Top row (Navbar style) */
+.navRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .navRow {
+    flex-direction: row;
+  }
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.navLinks li a {
+  color: #d1d5db;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navLinks li a:hover {
+  color: #e11d48; /* red accent */
+}
+
+.socials {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.socials a {
+  font-size: 1.3rem;
+  color: #d1d5db;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.socials a:hover {
+  color: #e11d48;
+  transform: scale(1.15);
+}
+
+/* Bottom row */
+.bottomRow {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #9ca3af;
+  margin-top: 1rem;
+}
+
+.disclaimer {
+  margin-bottom: 0.5rem;
+  color: #d1d5db;
+}
+
+.copy {
+  font-size: 0.85rem;
+  color: #6b7280;
+}

@@ -1,0 +1,154 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Background image */
+.bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+  object-position: top center;
+  z-index: 0;
+ background-color: transparent; 
+  filter: brightness(0.65);
+}
+
+/* ✅ Mobile/Tablet ke liye override */
+@media (max-width: 1024px) {
+  .bgImage {
+    object-fit: cover; 
+    object-position: center;
+  }
+}
+
+/* Chart wrapper */
+.chartWrapper {
+  position: absolute;
+  bottom: 20%;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  z-index: 1;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.chartLine polyline {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 4s linear infinite;
+}
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Text and buttons */
+.hero h1,
+.hero p,
+.ctaButtons {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero h1 span {
+  background: #ff2c2c;
+  color: #000;
+  padding: 6px 14px;
+  transform: rotate(-2deg);
+  display: inline-block;
+  border-radius: 6px;
+}
+
+.hero p {
+  margin-top: 10px;
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  line-height: 1.6;
+  color: #ddd;
+  max-width: 750px;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.primaryBtn,
+.secondaryBtn {
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.primaryBtn {
+  background: #ff2c2c;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(255, 44, 44, 0.4);
+}
+.primaryBtn:hover {
+  background: #e62121;
+  transform: translateY(-2px);
+}
+
+.secondaryBtn {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+.secondaryBtn:hover {
+  background: #fff;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .chartWrapper { bottom: 15%; height: 120px; }
+}
+
+@media (max-width: 768px) {
+  .hero { min-height: 90vh; padding: 0 15px; }
+  .hero h1 { font-size: 2rem; }
+  .hero p { font-size: 0.95rem; }
+  .ctaButtons { flex-direction: column; gap: 12px; }
+  .primaryBtn, .secondaryBtn { width: 100%; }
+  .chartWrapper { bottom: 12%; height: 100px; }
+}
+
+@media (max-width: 480px) {
+  .hero { min-height: 85vh; }
+  .hero h1 { font-size: 1.8rem; }
+  .hero p { font-size: 0.9rem; }
+  .chartWrapper { display: none; }
+}

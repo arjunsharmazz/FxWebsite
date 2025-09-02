@@ -1,0 +1,60 @@
+.section {
+  background: #000;
+  color: #fff;
+  padding: 4rem 1.5rem;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  color: #fff;
+}
+
+.highlight {
+  color: #ff3b3b; /* 🔴 red accent instead of aqua */
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card {
+  background: #111; /* deep black card */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 1.5rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.05);
+}
+
+.card:hover {
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.25);
+  transform: translateY(-4px);
+  border-color: #ff3b3b; /* 🔴 border glow */
+}
+
+.feedback {
+  font-style: italic;
+  color: #d1d5db;
+  margin-bottom: 1rem;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ff3b3b; /* 🔴 red highlight for names */
+}
+
+.role {
+  font-size: 0.9rem;
+  color: #9ca3af;
+}

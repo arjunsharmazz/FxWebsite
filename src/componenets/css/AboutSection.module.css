@@ -1,0 +1,167 @@
+.aboutSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 10%;
+  background: #000;
+  color: white;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* Left Side */
+.left {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.bgShape {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 260px;
+  background: linear-gradient(180deg, #ff1e56, #b20710);
+  border-radius: 140px;
+  z-index: 0;
+  filter: drop-shadow(0px 0px 25px rgba(229, 9, 20, 0.5));
+}
+
+.aboutImg {
+  position: relative;
+  z-index: 1;
+  width: 450px;
+  max-width: 100%;
+  object-fit: contain;
+  animation: floatRotate 6s ease-in-out infinite;
+  filter: drop-shadow(0px 8px 25px rgba(0, 0, 0, 0.4));
+}
+
+/* Floating + Rotate Animation */
+@keyframes floatRotate {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(2deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+/* Right Side - Glass Card */
+.right {
+  flex: 1;
+  padding-left: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 40px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.right h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.right p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #ddd;
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+/* Button with Glow */
+.btn {
+  background: linear-gradient(90deg, #ff1e56, #b20710);
+  border: none;
+  padding: 14px 36px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 0px 18px rgba(229, 9, 20, 0.5);
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #b20710, #ff1e56);
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0px 0px 25px rgba(229, 9, 20, 0.8);
+}
+
+/* ✅ Responsive Styles */
+@media (max-width: 1024px) {
+  .aboutSection {
+    gap: 40px;
+    padding: 60px 6%;
+  }
+
+  .aboutImg {
+    width: 380px;
+  }
+
+  .bgShape {
+    width: 220px;
+  }
+
+  .right h2 {
+    font-size: 2.2rem;
+  }
+
+  .right p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutSection {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 6%;
+  }
+
+  .left {
+    margin-bottom: 30px;
+  }
+
+  .right {
+    padding: 30px;
+  }
+
+  .aboutImg {
+    width: 300px;
+  }
+
+  .bgShape {
+    width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .right h2 {
+    font-size: 1.8rem;
+  }
+
+  .right p {
+    font-size: 0.95rem;
+  }
+
+  .aboutImg {
+    width: 240px;
+  }
+
+  .btn {
+    padding: 12px 28px;
+    font-size: 0.95rem;
+  }
+}

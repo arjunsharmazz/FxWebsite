@@ -1,0 +1,59 @@
+.section {
+  background: #000;
+  color: #fff;
+  padding: 4rem 1.5rem;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+}
+
+.highlight {
+  color: #ff3b3b; /* 🔴 red accent instead of neon green */
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.card {
+  background: #111; /* dark card background */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 1.5rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.05);
+}
+
+.card:hover {
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.3);
+  transform: translateY(-3px);
+}
+
+.icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ff3b3b; /* 🔴 icon red */
+}
+
+.stepTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.desc {
+  font-size: 0.95rem;
+  color: #9ca3af;
+}

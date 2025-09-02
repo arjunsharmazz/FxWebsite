@@ -1,0 +1,130 @@
+.section {
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  padding: 6rem 2rem;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(255, 44, 44, 0.3), transparent 70%);
+  filter: blur(120px);
+  z-index: 0;
+}
+
+.section::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  right: -80px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 255, 204, 0.25), transparent 70%);
+  filter: blur(120px);
+  z-index: 0;
+}
+
+.wrapper {
+  max-width: 1250px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3.5rem;
+  background: linear-gradient(90deg, #ff2c2c, #00ffcc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.highlight {
+  color: #ff2c2c;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2.5rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(255, 44, 44, 0.35);
+}
+
+.highlightCard {
+  border: 2px solid #ff2c2c;
+  background: linear-gradient(160deg, rgba(255, 44, 44, 0.15), rgba(0, 255, 204, 0.15));
+}
+
+.cardTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.deposit {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #ddd;
+}
+
+.details {
+  margin-bottom: 1.5rem;
+  text-align: left;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.details li {
+  margin: 0.4rem 0;
+}
+
+.features {
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+  color: #eee;
+  list-style: none;
+  padding: 0;
+}
+
+.features li {
+  margin: 0.3rem 0;
+}
+
+.btn {
+  background: linear-gradient(90deg, #ff2c2c, #00ffcc);
+  border: none;
+  padding: 0.9rem 1.6rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 44, 44, 0.4);
+}

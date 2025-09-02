@@ -1,0 +1,130 @@
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import styles from "./css/EducationResources.module.css";
+import img1 from "../assets/sopiha.png"
+import img2 from "../assets/arjun.png";
+
+const data = [
+  {
+    feedback: "Best trading platform I’ve ever used. Super smooth & reliable!",
+    name: "Rahul Mehta",
+    role: "Crypto Investor",
+    img: img1,
+  },
+  {
+    feedback: "Real-time insights helped me take better trading decisions.",
+    name: "Sophia Sharma",
+    role: "Stock Trader",
+    img: img2,
+  },
+  {
+    feedback: "Secure, fast, and all-in-one platform. Highly recommended!",
+    name: "Arjun Patel",
+    role: "Forex Enthusiast",
+     img: img1,
+  },
+  {
+    feedback: "Loved the clean UI and smooth navigation. Made trading stress-free!",
+    name: "Neha Kapoor",
+    role: "Day Trader",
+       img: img2,
+  },
+  {
+    feedback: "Excellent customer support and fast execution. Can’t ask for more!",
+    name: "Ananya Verma",
+    role: "Long-term Investor",
+ img: img1,
+  },
+  {
+    feedback: "It feels futuristic — fast, reliable, and professional. Kudos!",
+    name: "Rohit Malhotra",
+    role: "Scalper",
+       img: img2,
+  },
+];
+
+export default function EducationResources() {
+  const [activeIndex, setActiveIndex] = useState(1);
+
+  const prevSlide = () => {
+    setActiveIndex((prev) => (prev === 0 ? data.length - 1 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setActiveIndex((prev) => (prev === data.length - 1 ? 0 : prev + 1));
+  };
+
+  return (
+    <section className={styles.carouselSection}>
+      <h2 className={styles.heading}>What Our Traders Say</h2>
+
+      <div className={styles.carouselContainer}>
+        {data.map((item, i) => {
+          const offset = i - activeIndex;
+
+          return (
+            <motion.div
+              key={i}
+              className={styles.card}
+              initial={{ opacity: 0, scale: 0.8, y: 50 }}
+              animate={{
+                opacity: Math.abs(offset) > 1 ? 0 : 1,
+                scale: i === activeIndex ? 1 : 0.75,
+                x: offset * 360,
+                zIndex: i === activeIndex ? 10 : 0,
+                rotateY: offset * -15,
+              }}
+              transition={{ type: "spring", stiffness: 200, damping: 25 }}
+            >
+              <div className={styles.avatarWrapper}>
+                <motion.img
+                  src={item.img}
+                  alt={item.name}
+                  className={styles.avatar}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 200 }}
+                />
+              </div>
+              <p className={styles.feedback}>"{item.feedback}"</p>
+              <h3 className={styles.name}>{item.name}</h3>
+              <span className={styles.role}>{item.role}</span>
+            </motion.div>
+          );
+        })}
+      </div>
+
+      {/* ✅ Nav Buttons Center Below */}
+      <div className={styles.navWrapper}>
+        <motion.button
+          onClick={prevSlide}
+          className={styles.navBtn}
+          whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.1 }}
+        >
+          <ChevronLeft size={28} />
+        </motion.button>
+        <motion.button
+          onClick={nextSlide}
+          className={styles.navBtn}
+          whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.1 }}
+        >
+          <ChevronRight size={28} />
+        </motion.button>
+      </div>
+
+      {/* Dots */}
+      <div className={styles.dots}>
+        {data.map((_, i) => (
+          <motion.button
+            key={i}
+            onClick={() => setActiveIndex(i)}
+            className={`${styles.dot} ${i === activeIndex ? styles.activeDot : ""}`}
+            whileHover={{ scale: 1.2 }}
+          />
+        ))}
+      </div>
+    </section>
+  );
+}

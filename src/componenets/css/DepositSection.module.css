@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: transparent;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  margin: 1.5rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #00ffc3;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+}
+
+.item {
+  width: 220px;
+  height: 320px;
+  list-style-type: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 30px rgba(255, 255, 255, 0.3) inset;
+  transition: transform 0.3s, left 0.75s, top 0.75s, width 0.75s, height 0.75s,
+    opacity 0.75s;
+}
+
+/* First image (Hero full background) */
+/* First image (Hero full background - FIT) */
+.item:nth-child(1) {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: none;
+  border-radius: 0;
+  box-shadow: none;
+  opacity: 1;
+  background-size: contain;   /* image pura visible hoga */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Hero content left side */
+.item:nth-child(1) .content {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 5%; /* content left shift */
+  transform: translateY(-50%);
+  width: min(40%, 500px);
+  text-align: left;
+  opacity: 1;
+  color: white;
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.7);
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.item:nth-child(1) .title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.item:nth-child(1) .description {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  max-width: 90%;
+}
+
+.item:nth-child(1) .content button {
+  background-color: #00ffc3;
+  color: #000;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.item:nth-child(1) .content button:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* 2nd image onwards - small cards */
+.item:nth-child(2) {
+  left: 50%;
+}
+.item:nth-child(3) {
+  left: calc(50% + 240px);
+}
+.item:nth-child(4) {
+  left: calc(50% + 480px);
+}
+.item:nth-child(5) {
+  left: calc(50% + 720px);
+}
+.item:nth-child(6) {
+  left: calc(50% + 960px);
+  opacity: 0;
+}
+
+/* Default content (hide for cards) */
+.content {
+  display: none !important;
+}
+
+/* Only show for first hero */
+.item:nth-child(1) .content {
+  display: block !important;
+}
+
+/* Hero fade animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(calc(-50% + 50px));
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
+
+/* Navigation buttons */
+.nav {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.7);
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  padding: 0.75rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}

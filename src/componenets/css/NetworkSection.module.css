@@ -1,0 +1,126 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+  background-image: url("../../assets/world-map.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+/* Center card */
+.centerCard {
+  position: relative;
+  z-index: 2;
+  background: rgba(20, 20, 20, 0.8);
+  border-radius: 18px;
+  padding: 2rem 3rem;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.centerCard h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.amount {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ff004c;
+}
+
+/* Floating user cards */
+.userCard {
+  position: absolute;
+  z-index: 2;
+  background: rgba(15, 15, 15, 0.85);
+  border-radius: 16px;
+  padding: 16px 20px;
+  min-width: 140px;
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  animation: floatCard 6s ease-in-out infinite;
+}
+
+.userCard:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 0 18px rgba(255, 0, 76, 0.5);
+  border: 1px solid rgba(255, 0, 76, 0.6);
+}
+
+.userCard img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+
+/* Floating animation */
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Header text */
+.header {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #cccccc;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .centerCard {
+    padding: 1.5rem 2rem;
+  }
+  .title {
+    font-size: 1.8rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  .userCard {
+    min-width: 110px;
+    padding: 12px 14px;
+    font-size: 0.9rem;
+  }
+  .userCard img {
+    width: 48px;
+    height: 48px;
+  }
+}

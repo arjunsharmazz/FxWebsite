@@ -1,0 +1,50 @@
+.section {
+  background: linear-gradient(90deg, rgba(255,0,76,0.15), rgba(255,0,0,0.15)); /* 🔴 red glow gradient */
+  padding: 3rem 1.5rem;
+}
+
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.highlight {
+  color: #ff3b3b; /* 🔴 red accent instead of aqua */
+}
+
+.btn {
+  background: #ff3b3b; /* 🔴 red CTA button */
+  color: #fff;
+  font-weight: 600;
+  padding: 0.9rem 1.8rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.3);
+}
+
+.btn:hover {
+  background: #e11d48; /* darker red hover */
+  transform: scale(1.05);
+  box-shadow: 0 0 16px rgba(255, 0, 0, 0.5);
+}

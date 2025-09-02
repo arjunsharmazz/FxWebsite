@@ -1,0 +1,154 @@
+.steps-section {
+  width: 100%;
+  padding: 3rem 30px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.steps-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  color: #fff;
+}
+
+/* Left side steps list */
+.steps-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 280px;
+}
+
+.step-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1.2rem;
+  border-radius: 15px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.5);
+  transition: 0.3s ease;
+}
+.step-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Icons */
+.icon {
+  font-size: 1.8rem;
+  padding: 10px;
+  border-radius: 50%;
+  color: #fff;
+}
+.green { background: #00c853; }
+.red { background: #d50000; }
+.blue { background: #2962ff; }
+.yellow { background: #ffab00; }
+.purple { background: #6a1b9a; }
+
+/* Right side */
+.steps-right {
+  flex: 1;
+  text-align: center;
+  min-width: 300px;
+}
+.subtext {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: #bbb;
+}
+.heading {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 1rem 0;
+}
+.highlight {
+  color: #ff3030;
+}
+
+/* Buttons */
+.btn-register {
+  margin-top: 1.5rem;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 35px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  background: linear-gradient(45deg, #ff0000, #ff6a00);
+  color: white;
+}
+.btn-register:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6);
+}
+
+/* ================= Responsive ================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .steps-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .steps-right {
+    order: -1; /* text pehle aayega */
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .steps-section {
+    padding: 2rem 15px; /* kam padding for mobile */
+  }
+
+  .steps-container {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .steps-list {
+    width: 100%;
+    gap: 0.8rem;
+  }
+
+  .step-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem; /* compact */
+  }
+
+  .heading {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+
+  .btn-register {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+}

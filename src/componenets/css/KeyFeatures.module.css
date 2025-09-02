@@ -1,0 +1,59 @@
+.section {
+  background: transparent;
+  padding: 6rem 2rem;
+  color: #fff;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.highlight {
+  color: #ff2c2c;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 10px 20px rgba(255, 44, 44, 0.35);
+}
+
+.icon {
+  color: #ff2c2c;
+  margin-bottom: 1rem;
+}
+
+.cardTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}
+
+.desc {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #dcdcdc;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

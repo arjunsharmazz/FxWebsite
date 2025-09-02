@@ -1,0 +1,55 @@
+.trust {
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #ffffff;
+  background: #000; /* solid black for consistency */
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  color: #fff;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.card {
+  background: #111; /* deep black card */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 2rem 2.5rem;
+  min-width: 220px;
+  transition: transform 0.25s ease, border 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.05);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border: 1px solid #ff3b3b; /* 🔴 red accent */
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.35);
+}
+
+.stars {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #facc15; /* ⭐ gold stars stay same */
+}
+
+.number {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+  color: #fff;
+}
+
+.text {
+  font-size: 1rem;
+  color: #d1d5db;
+}

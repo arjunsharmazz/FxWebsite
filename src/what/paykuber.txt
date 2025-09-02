@@ -1,0 +1,111 @@
+PayKuber Website Structure – Full Summary (With Live Features)
+
+1. Home Page
+   - Hero Section: Call to action (CTA), registration/login
+   - Highlight Features: Live trading tools, multi-asset access
+   - Real-time Ticker (Live Data Strip): Top crypto, stock, forex rates scrolling
+   - Quick Access: Start demo, download app, top strategies
+
+2. About Us
+   - Mission, Vision, Company History
+   - Regulation, Security Practices, Licensing (e.g., IFC)
+   - Global Presence and Compliance
+
+3. Live Market Data (NEW PAGE – Critical)
+   - **Live Cryptocurrency Prices** (e.g., BTC, ETH, USDT)
+   - **Live Forex Rates** (USD/INR, EUR/USD, etc.)
+   - **Live Stock Prices** (Apple, Tesla, Reliance, etc.)
+   - **Live Commodities** (Gold, Oil, Silver)
+   - Option to filter and favorite instruments
+   - Real-time chart integration (e.g., TradingView API or WebSocket feeds)
+
+4. Trading Platform
+   - Platform Overview (Web & Mobile)
+   - Instrument Types: Crypto, Forex, Stocks, Indices, Commodities
+   - Trading Modes: Fixed Time Trading, Forex/CFDs, Multiplier Mode
+   - **Live Charts Section**: Interactive, multi-timeframe, candlestick + indicators
+   - Technical Tools: RSI, MACD, Moving Averages, Trendlines
+   - Strategy Center (with templates, signal integrations)
+
+5. Education
+   - Beginner to Pro video courses
+   - E-books & strategy guides
+   - Trading glossary
+   - Live webinars & recorded classes
+   - **Market News Feed**: Economic events, trading tips, analyst opinions
+
+6. Account Types
+   - Demo Account: Virtual $10,000
+   - Starter / Pro / Expert plans
+   - Features comparison chart
+
+7. Tournaments & Promotions
+   - Current bonus offers
+   - Trading contests & leaderboard
+   - XP-based loyalty system
+
+8. Deposit & Withdrawals
+   - Local methods: UPI, Paytm, Cards, Netbanking
+   - KYC process, speed of withdrawal
+   - Transaction history & limits
+
+9. Mobile/Desktop Apps
+   - iOS/Android/Windows/Mac links
+   - Features preview with screenshots
+   - Push notifications & auto sync
+
+10. Support Center
+   - 24/7 Live Chat, Email, Phone
+   - FAQ: Platform, Trading, Account, Payments
+   - Local language support (e.g., Hindi, English)
+
+11. Legal & Policies
+   - Terms of Use
+   - Privacy Policy
+   - AML/KYC Policy
+   - Risk Disclosure
+
+12. Blog / Market Insights
+   - Technical analysis posts
+   - Daily/weekly market recap
+   - Company updates
+   - Guest trader insights
+
+13. Community & Trust
+   - User base statistics
+   - Testimonials & reviews
+   - Awards and certifications
+   - Telegram/YouTube/Facebook links
+
+14. Footer
+   - All page links
+   - Regulatory disclosures
+   - Social media
+   - Newsletter signup
+
+---
+
+**Live Data Features – Tech Implementation Notes**
+
+To enable live crypto/stock/forex data:
+- Use APIs from:
+  - [CoinGecko](https://www.coingecko.com/en/api) / [CoinMarketCap](https://coinmarketcap.com/api/) (for crypto)
+  - [Alpha Vantage](https://www.alphavantage.co/) / [Twelve Data](https://twelvedata.com/) (for stocks/forex)
+  - [TradingView](https://www.tradingview.com/widget/) widgets for live charts
+- Use **WebSocket APIs** for real-time updates (vs REST APIs for periodic polling)
+- Caching + rate limit handling to optimize load times
+
+---
+
+**Aapko kya karna chahiye?**
+✔️ Ye structure web developer ko dena
+✔️ API selection aur integration plan banana
+✔️ UI/UX designer se chart layout aur live data placement ka mockup banana
+
+Agar chahen to main aapko:
+- **JSON sitemap**
+- **Wireframe images**
+- **API integration plan (with sample code)**
+bhi de sakta hoon.
+
+Batayein agar chahiye toh.

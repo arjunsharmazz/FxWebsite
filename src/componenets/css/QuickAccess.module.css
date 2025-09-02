@@ -1,0 +1,65 @@
+.quickAccess {
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #ffffff; /* White text */
+  background: transparent; /* No background so fixed BG is visible */
+}
+
+.heading {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent for readability */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: transform 0.2s ease, border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border: 1px solid #e11d48; /* red accent */
+  box-shadow: 0 6px 18px rgba(225, 29, 72, 0.3);
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.text {
+  font-size: 1rem;
+  color: #d1d5db;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.btn {
+  background: #e11d48; /* red button */
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn:hover {
+  background: #be123c; /* darker red */
+}
