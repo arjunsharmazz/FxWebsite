@@ -7,9 +7,8 @@ const links = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
   { label: "Contact", path: "/contact" },
-  { label: "Markets", path: "/markets" },
-  { label: "News", path: "/news" },
-  { label: "Community", path: "/community" },
+  // { label: "Help", path: "/help" },
+  // { label: "News", path: "/news" },
 ];
 
 const itemVariants = {

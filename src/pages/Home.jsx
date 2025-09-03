@@ -37,10 +37,6 @@ const Home = () => {
       <SecurityHighlights />
       <StepsSection />
       <TradeSection />
-      {/* <QuickAccess />
-      <TrustSection />
-      <HowItWorks />
-      <AccountTypes /> */}
       <FaqSection />
       <AboutSection />
       <EducationResources />

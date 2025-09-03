@@ -1,71 +1,67 @@
-import React, { useState } from "react";
+import { motion } from "framer-motion";
 import styles from "./css/Contact.module.css";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Contact() {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Contact Form Data:", form);
-    // 🚀 Yahan aap API call kar sakte ho
-    setForm({ name: "", email: "", message: "" });
-  };
-
   return (
     <div className={styles.contactPage}>
-      <div className={styles.contactCard}>
-        <h1 className={styles.title}>Get in Touch</h1>
-        <p className={styles.subtitle}>
-          Have questions? We’d love to hear from you.
-        </p>
+      {/* Hero Section */}
+      <motion.div
+        className={styles.hero}
+        initial={{ opacity: 0, y: -40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h1>Contact PayKuberFX</h1>
+        <p>We’re here to help you 24/7 — connect with us anytime.</p>
+      </motion.div>
 
-        <form onSubmit={handleSubmit} className={styles.form}>
-          <div className={styles.inputGroup}>
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={form.name}
-              onChange={handleChange}
-              required
-            />
-          </div>
+      {/* Contact Info Section */}
+      <div className={styles.infoGrid}>
+        <motion.div
+          className={styles.infoCard}
+          whileHover={{ scale: 1.05 }}
+        >
+          <Mail className={styles.icon} />
+          <h3>Email Us</h3>
+          <p>support@paykuberfx.com</p>
+        </motion.div>
 
-          <div className={styles.inputGroup}>
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              value={form.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
+        <motion.div
+          className={styles.infoCard}
+          whileHover={{ scale: 1.05 }}
+        >
+          <Phone className={styles.icon} />
+          <h3>Call Us</h3>
+          <p>+91 9999999999</p>
+        </motion.div>
 
-          <div className={styles.inputGroup}>
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              rows="5"
-              value={form.message}
-              onChange={handleChange}
-              required
-            ></textarea>
-          </div>
-
-          <button type="submit" className={styles.submitBtn}>
-            Send Message
-          </button>
-        </form>
+        <motion.div
+          className={styles.infoCard}
+          whileHover={{ scale: 1.05 }}
+        >
+          <MapPin className={styles.icon} />
+          <h3>Visit Us</h3>
+          <p>Mumbai, India</p>
+        </motion.div>
       </div>
+
+      {/* Contact Form */}
+      <motion.div
+        className={styles.formWrapper}
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <h2>Send Us a Message</h2>
+        <form className={styles.form}>
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message" rows="5" required />
+          <button type="submit">Send Message</button>
+        </form>
+      </motion.div>
     </div>
   );
 }

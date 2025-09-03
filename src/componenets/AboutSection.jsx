@@ -44,7 +44,7 @@ export default function AboutSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          About
+          About PayKuberFX
         </motion.h2>
 
         <motion.p
@@ -53,10 +53,10 @@ export default function AboutSection() {
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          We serve as consultants as it relates to distribution channels,
-          documentation and validation and value experts. We also serve as an
-          arena for guaranteed and secured investments for investors willing to
-          invest into the Agro-industry.
+          PayKuberFX is a trusted Forex & Financial Trading platform, designed to give traders worldwide a smart, secure, and transparent trading experience
+          With advanced tools, real-time insights, and 24/7 support, we make trading easier for both beginners and professionals.
+
+          <br></br>Start your journey with PayKuberFX and trade with confidence & clarity.
         </motion.p>
 
         <motion.button
