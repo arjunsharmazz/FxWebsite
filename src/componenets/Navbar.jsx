@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./css/Navbar.module.css";
+import { useAuth } from "../context/AuthContext";
 
 const links = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
   { label: "Contact", path: "/contact" },
   { label: "Live", path: "/liveforex" },
-  // { label: "Help", path: "/help" },
   { label: "News", path: "/news" },
 ];
 
@@ -22,17 +22,16 @@ const itemVariants = {
 };
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
   const { pathname } = useLocation();
+  const { isLoggedIn, logout } = useAuth();
 
-  // Lock scroll when mobile menu open
-  useEffect(() => {
+  React.useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
     return () => (document.body.style.overflow = "");
   }, [isOpen]);
 
-  // Close menu on route change
-  useEffect(() => {
+  React.useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
 
@@ -71,12 +70,20 @@ export default function Navbar() {
 
       {/* Actions (Desktop) */}
       <div className={styles.actions}>
-        <Link to="/login">
-          <button className={styles.loginBtn}>Login</button>
-        </Link>
-        <Link to="/signup">
-          <button className={styles.startBtn}>Start Free Trial</button>
-        </Link>
+        {isLoggedIn ? (
+          <button className={styles.loginBtn} onClick={logout}>
+            Logout
+          </button>
+        ) : (
+          <>
+            <Link to="/login">
+              <button className={styles.loginBtn}>Login</button>
+            </Link>
+            <Link to="/signup">
+              <button className={styles.startBtn}>Start Free Trial</button>
+            </Link>
+          </>
+        )}
       </div>
 
       {/* Hamburger (Mobile) */}
@@ -133,12 +140,20 @@ export default function Navbar() {
             ))}
 
             <div className={styles.mobileActions}>
-              <Link to="/login">
-                <button className={styles.loginBtn}>Login</button>
-              </Link>
-              <Link to="/signup">
-                <button className={styles.startBtn}>Start Free Trial</button>
-              </Link>
+              {isLoggedIn ? (
+                <button className={styles.loginBtn} onClick={logout}>
+                  Logout
+                </button>
+              ) : (
+                <>
+                  <Link to="/login">
+                    <button className={styles.loginBtn}>Login</button>
+                  </Link>
+                  <Link to="/signup">
+                    <button className={styles.startBtn}>Start Free Trial</button>
+                  </Link>
+                </>
+              )}
             </div>
           </motion.nav>
         )}

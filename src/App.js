@@ -15,6 +15,8 @@ import Terms from "./pages/Terms";
 import ForexNews from "./pages/ForexNews";
 import DemoTrade from "./pages/DemoTrade";
 
+import { AuthProvider } from "./context/AuthContext";
+
 function ScrollToTopWrapper({ children }) {
   const { pathname } = useLocation();
 
@@ -29,23 +31,25 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <ScrollToTopWrapper>
-          <Routes>
-            <Route path="/" element={<MainLayout />}>
-              <Route index element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/help" element={<Help />} />
-              <Route path="/news" element={<News />} />
-              <Route path="/liveforex" element={<LiveForex />} />
-              <Route path="/privacy" element={<PrivacyPolicy />} />
-              <Route path="/terms" element={<Terms />} />
-              <Route path="/demo" element={<DemoTrade />} />
-            </Route>
-          </Routes>
-        </ScrollToTopWrapper>
+        <AuthProvider>
+          <ScrollToTopWrapper>
+            <Routes>
+              <Route path="/" element={<MainLayout />}>
+                <Route index element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route path="/help" element={<Help />} />
+                <Route path="/news" element={<News />} />
+                <Route path="/liveforex" element={<LiveForex />} />
+                <Route path="/privacy" element={<PrivacyPolicy />} />
+                <Route path="/terms" element={<Terms />} />
+                <Route path="/demo" element={<DemoTrade />} />
+              </Route>
+            </Routes>
+          </ScrollToTopWrapper>
+        </AuthProvider>
       </BrowserRouter>
     </div>
   );
