@@ -2,8 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import styles from "./css/Hero.module.css";
 import heroImg from "../assets/hero-bg.png";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Hero = () => {
+    const navigate = useNavigate();
   return (
     <section className={styles.hero}>
       {/* Background image */}
@@ -53,7 +55,7 @@ const Hero = () => {
         transition={{ duration: 1.5 }}
       >
         <button className={styles.primaryBtn}>Start Trading</button>
-        <button className={styles.secondaryBtn}>Try Demo</button>
+        <button className={styles.secondaryBtn} onClick={() => navigate("/demo")}>Try Demo</button>
       </motion.div>
     </section>
   );

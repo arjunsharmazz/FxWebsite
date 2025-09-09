@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import styles from "./css/EducationResources.module.css";
-import img1 from "../assets/sopiha.png"
+import img1 from "../assets/sopiha.png";
 import img2 from "../assets/arjun.png";
 
 const data = [
@@ -22,30 +22,40 @@ const data = [
     feedback: "Secure, fast, and all-in-one platform. Highly recommended!",
     name: "Arjun Patel",
     role: "Forex Enthusiast",
-     img: img1,
+    img: img1,
   },
   {
-    feedback: "Loved the clean UI and smooth navigation. Made trading stress-free!",
+    feedback:
+      "Loved the clean UI and smooth navigation. Made trading stress-free!",
     name: "Neha Kapoor",
     role: "Day Trader",
-       img: img2,
+    img: img2,
   },
   {
     feedback: "Excellent customer support and fast execution. Can’t ask for more!",
     name: "Ananya Verma",
     role: "Long-term Investor",
- img: img1,
+    img: img1,
   },
   {
     feedback: "It feels futuristic — fast, reliable, and professional. Kudos!",
     name: "Rohit Malhotra",
     role: "Scalper",
-       img: img2,
+    img: img2,
   },
 ];
 
 export default function EducationResources() {
   const [activeIndex, setActiveIndex] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // ✅ Detect screen size
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 992);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const prevSlide = () => {
     setActiveIndex((prev) => (prev === 0 ? data.length - 1 : prev - 1));
@@ -60,41 +70,68 @@ export default function EducationResources() {
       <h2 className={styles.heading}>What Our Traders Say</h2>
 
       <div className={styles.carouselContainer}>
-        {data.map((item, i) => {
-          const offset = i - activeIndex;
-
-          return (
+        {/* ✅ Mobile view: fast slide+fade */}
+        {isMobile ? (
+          <AnimatePresence mode="wait">
             <motion.div
-              key={i}
+              key={activeIndex}
               className={styles.card}
-              initial={{ opacity: 0, scale: 0.8, y: 50 }}
-              animate={{
-                opacity: Math.abs(offset) > 1 ? 0 : 1,
-                scale: i === activeIndex ? 1 : 0.75,
-                x: offset * 360,
-                zIndex: i === activeIndex ? 10 : 0,
-                rotateY: offset * -15,
-              }}
-              transition={{ type: "spring", stiffness: 200, damping: 25 }}
+              initial={{ opacity: 0, x: 80 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -80 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
             >
               <div className={styles.avatarWrapper}>
                 <motion.img
-                  src={item.img}
-                  alt={item.name}
+                  src={data[activeIndex].img}
+                  alt={data[activeIndex].name}
                   className={styles.avatar}
                   whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 200 }}
+                  transition={{ type: "spring", stiffness: 300 }}
                 />
               </div>
-              <p className={styles.feedback}>"{item.feedback}"</p>
-              <h3 className={styles.name}>{item.name}</h3>
-              <span className={styles.role}>{item.role}</span>
+              <p className={styles.feedback}>"{data[activeIndex].feedback}"</p>
+              <h3 className={styles.name}>{data[activeIndex].name}</h3>
+              <span className={styles.role}>{data[activeIndex].role}</span>
             </motion.div>
-          );
-        })}
+          </AnimatePresence>
+        ) : (
+          // ✅ Desktop view: snappy spring carousel
+          data.map((item, i) => {
+            const offset = i - activeIndex;
+            return (
+              <motion.div
+                key={i}
+                className={styles.card}
+                initial={{ opacity: 0, scale: 0.8, y: 50 }}
+                animate={{
+                  opacity: Math.abs(offset) > 1 ? 0 : 1,
+                  scale: i === activeIndex ? 1 : 0.75,
+                  x: offset * 360,
+                  zIndex: i === activeIndex ? 10 : 0,
+                  rotateY: offset * -15,
+                }}
+                transition={{ type: "spring", stiffness: 500, damping: 15 }}
+              >
+                <div className={styles.avatarWrapper}>
+                  <motion.img
+                    src={item.img}
+                    alt={item.name}
+                    className={styles.avatar}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  />
+                </div>
+                <p className={styles.feedback}>"{item.feedback}"</p>
+                <h3 className={styles.name}>{item.name}</h3>
+                <span className={styles.role}>{item.role}</span>
+              </motion.div>
+            );
+          })
+        )}
       </div>
 
-      {/* ✅ Nav Buttons Center Below */}
+      {/* ✅ Nav Buttons */}
       <div className={styles.navWrapper}>
         <motion.button
           onClick={prevSlide}
@@ -114,13 +151,15 @@ export default function EducationResources() {
         </motion.button>
       </div>
 
-      {/* Dots */}
+      {/* ✅ Dots */}
       <div className={styles.dots}>
         {data.map((_, i) => (
           <motion.button
             key={i}
             onClick={() => setActiveIndex(i)}
-            className={`${styles.dot} ${i === activeIndex ? styles.activeDot : ""}`}
+            className={`${styles.dot} ${
+              i === activeIndex ? styles.activeDot : ""
+            }`}
             whileHover={{ scale: 1.2 }}
           />
         ))}

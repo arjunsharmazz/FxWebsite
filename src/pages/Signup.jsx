@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./css/Login.module.css"; // same CSS reuse
+import { Link } from "react-router-dom";
 
 export default function Signup() {
   return (
@@ -30,7 +31,7 @@ export default function Signup() {
 
           <div className={styles.links}>
             <span>
-              Already have an account? <a href="/login">Login</a>
+              Already have an account? <Link to="/login">Login</Link>
             </span>
           </div>
         </form>

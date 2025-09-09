@@ -157,10 +157,47 @@
 }
 .mobileMenu a:hover { color: #fff; }
 
+/* Mobile Actions (buttons inside mobile menu) */
 .mobileActions {
   display: flex;
-  gap: 10px;
-  margin-top: 10px;
+  flex-direction: column;   /* buttons stacked vertically */
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.mobileActions button {
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Login button (subtle glass) */
+.mobileActions .loginBtn {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(8px);
+}
+.mobileActions .loginBtn:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.4);
+}
+
+/* Start button (gradient & glow) */
+.mobileActions .startBtn {
+  background: linear-gradient(135deg, #ff2c2c, #ff5a5a);
+  color: #fff;
+  box-shadow: 0 0 14px rgba(255,44,44,0.6);
+}
+.mobileActions .startBtn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #e62121, #ff2c2c);
+  box-shadow: 0 0 20px rgba(255,44,44,0.9);
 }
 
 /* Responsive */

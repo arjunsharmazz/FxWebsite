@@ -105,6 +105,11 @@
 
 /* Responsive design */
 @media (max-width: 768px) {
+  .wrapper {
+    background-size: cover;   /* ✅ fix: fill screen on mobile */
+    background-position: center;
+  }
+
   .centerCard {
     padding: 1.5rem 2rem;
   }
