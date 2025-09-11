@@ -1,0 +1,79 @@
+:root {
+  --bg-dark: #0a0a0a;
+  --accent: #ff3b3b;
+  --glass: rgba(255, 255, 255, 0.08);
+  --text: #ffffff;
+  --text-muted: #cccccc;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 3rem 1.5rem;
+  /* background: radial-gradient(circle at top, #0d0d0d, #000); */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: "Poppins", sans-serif;
+}
+
+.glassCard {
+  width: 100%;
+  max-width: 950px;
+  /* background: var(--glass); */
+  /* backdrop-filter: blur(18px) saturate(200%);
+  -webkit-backdrop-filter: blur(18px) saturate(200%); */
+  border-radius: 24px;
+  /* border: 1px solid rgba(255, 255, 255, 0.12); */
+  padding: 2.5rem;
+  color: var(--text);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+.heading {
+  font-size: 2.6rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+  letter-spacing: 1px;
+  text-shadow: 0 0 12px rgba(255, 59, 59, 0.6);
+}
+
+.intro {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.brand {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.sectionWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.section {
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}

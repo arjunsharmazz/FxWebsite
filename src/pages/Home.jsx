@@ -20,6 +20,8 @@ import AnytimeSection from "../componenets/AnytimeSection.jsx";
 import StepsSection from "../componenets/StepsSection.jsx";
 import NetworkSection from "../componenets/NetworkSection.jsx";
 import TradeSection from "../componenets/TradeSection.jsx";
+import TeamCarousel from "../componenets/TeamCarousel.jsx";
+import Paymentslogo from "../componenets/Paymentslogo.js";
 
 
 const Home = () => {
@@ -37,6 +39,7 @@ const Home = () => {
       <SecurityHighlights />
       <StepsSection />
       <TradeSection />
+      <Paymentslogo />
       <FaqSection />
       <AboutSection />
       <EducationResources />

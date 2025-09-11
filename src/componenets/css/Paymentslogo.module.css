@@ -1,0 +1,248 @@
+
+:root {
+  --background-color: #262626;
+  --text-color: #fff;
+  --primary-font: "Poppins", serif;
+  --heading-font-size: 12vw;
+  --header-card-padding: 1.5rem;
+  --card-padding: 1.5rem;
+  --card-shadow: 0 -8px 15px rgba(0, 0, 0, 0.85);
+  --card-margin: 60px;
+  --mini-card-min-size: 300px;
+  --mini-card-border-radius: 16px;
+  --scrollbar-height: 4px;
+  --scrollbar-color: #666;
+  --scrollbar-bg: #000000;
+}
+
+.pageWrap {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.postSliders {
+  padding-top: calc(60px * 1.5);
+}
+
+.sectionHeading {
+  font-weight: 800;
+  font-size: var(--heading-font-size);
+  margin-bottom: -6vw;
+}
+
+.postSlider {
+  /* background: var(--background-color); */
+  box-shadow: var(--card-shadow);
+  display: flex;
+  margin: 0 0 var(--card-margin) 0;
+  padding: 0 32px 32px;
+  position: relative;
+}
+
+.postSliderHeader {
+  color: var(--text-color);
+  margin-top: 2rem;
+  flex: 0 0 250px;
+  margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--header-card-padding);
+  transform: translateY(-10px);
+  position: relative;
+}
+
+.postSliderHeader::before {
+  content: "";
+  background: linear-gradient(130deg, #ff7a18 0%, #af002d 41.07%, #319197 76.05%);
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  z-index: 1;
+  border-radius: 12px;
+}
+
+.postSliderHeader::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 2;
+  border-radius: 8px;
+}
+
+.headerCard * {
+  color: var(--text-color);
+  position: relative;
+  z-index: 3;
+  font-size: 15px;
+}
+
+.headerCardTitle {
+  font-weight: 800;
+  font-size: 25px;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.miniCardGrid {
+  padding: 3rem 0 3rem 2rem;
+  display: flex;
+  overflow-x: scroll;
+  gap: 1rem;
+  position: relative;
+}
+
+.miniCard {
+  min-width: var(--mini-card-min-size);
+  min-height: var(--mini-card-min-size);
+  box-shadow: -2rem 0 3rem -2rem #000;
+  padding: var(--card-padding);
+  border-radius: var(--mini-card-border-radius);
+  background: linear-gradient(85deg, #434343, #262626);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.miniCard:not(:first-child) {
+  margin-left: -130px;
+  box-shadow: -3rem 0 3rem -2rem #000;
+}
+
+.miniCard time {
+  display: block;
+  margin: 0 0 0.25rem 0;
+  color: #777;
+}
+
+.miniCardTitle {
+  font-size: 1.3rem;
+  margin: 0 0 1rem 0;
+  font-weight: 800;
+  letter-spacing: 0.03rem;
+}
+
+.miniCard a {
+  color: var(--text-color);
+}
+
+.authorRow {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 0.5rem;
+  align-items: center;
+  color: #565656;
+  line-height: 1.3;
+  padding-top: 0.5rem;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.miniCardDescription {
+  display: block;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: #c0bb79;
+  font-size: 14px;
+}
+
+.miniCard:hover ~ .miniCard {
+  transform: translateX(130px);
+}
+
+.miniCard:first-child:hover {
+  transform: translate(-0.5rem, -1rem) rotate(3deg);
+}
+
+.miniCard:hover {
+  transform: translateY(-1rem) rotate(3deg);
+}
+
+.miniCardGrid::-webkit-scrollbar {
+  height: var(--scrollbar-height);
+  background-color: var(--scrollbar-bg);
+}
+
+.miniCardGrid::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-color);
+  border-radius: 3px;
+}
+
+.miniCardGrid::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* ---------------------------------
+  Responsive CSS for mobile devices
+  --------------------------------- */
+@media (max-width: 768px) {
+  .pageWrap {
+    padding: 0 20px;
+  }
+
+  .postSliders {
+    padding-top: 30px;
+  }
+
+  .sectionHeading {
+    font-size: 10vw;
+    margin-bottom: -8vw;
+  }
+
+  .postSlider {
+    flex-direction: column;
+    padding: 0 16px 16px;
+    margin-bottom: 30px;
+  }
+
+  .postSliderHeader {
+    flex: auto;
+    width: 100%;
+    margin-right: 0;
+    margin-top: 20px;
+    transform: none;
+  }
+
+  .miniCardGrid {
+    padding: 2rem 0 2rem 1rem;
+    gap: 16px;
+  }
+
+  .miniCard {
+    min-width: 250px;
+    min-height: 250px;
+    padding: 1rem;
+  }
+  
+  /* Reset hover effects for touch devices to avoid unexpected behavior */
+  .miniCard:hover {
+    transform: none;
+  }
+
+  .miniCard:hover ~ .miniCard {
+    transform: none;
+  }
+
+  .miniCard:first-child:hover {
+    transform: none;
+  }
+
+  .miniCard:not(:first-child) {
+    margin-left: 0;
+    box-shadow: none;
+  }
+}

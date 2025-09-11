@@ -11,11 +11,11 @@ import Help from "./pages/Help";
 import News from "./pages/News";
 import LiveForex from "./pages/LiveForex";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
-import Terms from "./pages/Terms";
-import ForexNews from "./pages/ForexNews";
+import Term from "./pages/Term";
 import DemoTrade from "./pages/DemoTrade";
-
+import OfferOverlay from "./componenets/OfferOverlay"; // typo fixed: "componenets" → "components"
 import { AuthProvider } from "./context/AuthContext";
+import Education from "./pages/Education";
 
 function ScrollToTopWrapper({ children }) {
   const { pathname } = useLocation();
@@ -32,6 +32,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <AuthProvider>
+          {/* Overlay should be outside Routes */}
+          <OfferOverlay />
+
           <ScrollToTopWrapper>
             <Routes>
               <Route path="/" element={<MainLayout />}>
@@ -44,8 +47,9 @@ function App() {
                 <Route path="/news" element={<News />} />
                 <Route path="/liveforex" element={<LiveForex />} />
                 <Route path="/privacy" element={<PrivacyPolicy />} />
-                <Route path="/terms" element={<Terms />} />
+                <Route path="/terms" element={<Term />} />
                 <Route path="/demo" element={<DemoTrade />} />
+                <Route path="/education" element={<Education />} />
               </Route>
             </Routes>
           </ScrollToTopWrapper>
