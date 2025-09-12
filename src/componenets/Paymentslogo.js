@@ -1,122 +1,89 @@
-import React from "react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import styles from "./css/Paymentslogo.module.css";
-import img from "../assets/arjun.jpg"; // default image
+import img from "../assets/Dashboard.png"; // default image
 
-const skills = [
-  {
-    title: "HTML",
-    description:
-      "Strong foundation in semantic HTML for accessible and SEO-friendly web pages.",
-    image: img,
-  },
-  {
-    title: "CSS",
-    description: "Expertise in Flexbox, Grid, animations, and responsive design.",
-    image: img,
-  },
-  {
-    title: "Javascript",
-    description: "Dynamic scripting for interactive web experiences.",
-    image: img,
-  },
-  {
-    title: "React.js",
-    description:
-      "Building interactive UI with hooks, components, and state management.",
-    image: img,
-  },
-  {
-    title: "Node.js",
-    description:
-      "Backend development with Express.js, REST APIs, and server-side logic.",
-    image: img,
-  },
-  {
-    title: "Express.js",
-    description: "Creating robust APIs and middleware for scalable web apps.",
-    image: img,
-  },
-  {
-    title: "MongoDB",
-    description: "NoSQL database expertise with schema design and queries.",
-    image: img,
-  },
-  {
-    title: "Mongoose",
-    description: "ODM for MongoDB, schema validation, and database relationships.",
-    image: img,
-  },
-  {
-    title: "Figma",
-    description: "UI/UX design, prototyping, and collaborative design workflows.",
-    image: img,
-  },
-  {
-    title: "CorelDraw",
-    description:
-      "Graphic design and vector illustration for branding & creatives.",
-    image: img,
-  },
-  {
-    title: "Framer",
-    description:
-      "Prototyping and interactive design for modern web/mobile apps.",
-    image: img,
-  },
-  {
-    title: "Digital Marketing",
-    description: "SEO, SEM, content, and campaign strategy.",
-    image: img,
-  },
-  {
-    title: "Instagram Promotion",
-    description: "Social media growth strategies and branding campaigns.",
-    image: img,
-  },
-  {
-    title: "Online Mern Stack Course",
-    description: "End-to-end MERN development training.",
-    image: img,
-  },
-  {
-    title: "C/C++/Python/JS Course",
-    description: "Programming language fundamentals and practice.",
-    image: img,
-  },
-  {
-    title: "Data Entry",
-    description: "Efficient and accurate data entry skills.",
-    image: img,
-  },
+const withdrawals = [
+  { title: "Paykuber", description: "Withdraw funds using popular cryptocurrencies.", image: img },
+  { title: "UPI", description: "Fast and secure withdrawals directly to your UPI apps.", image: img },
+  { title: "Bank Transfer", description: "Quick transfer to your local bank account.", image: img },
+  { title: "Paytm", description: "Instant withdrawal with Paytm wallet support.", image: img },
+  { title: "Google Pay", description: "Withdraw instantly using Google Pay UPI.", image: img },
+  { title: "PhonePe", description: "Seamless withdrawal via PhonePe UPI.", image: img },
+  { title: "Amazon Pay", description: "Withdraw funds directly to Amazon Pay wallet.", image: img },
+  { title: "Skrill", description: "Trusted e-wallet withdrawals worldwide.", image: img },
+  { title: "Neteller", description: "Instant global withdrawals to your Neteller wallet.", image: img },
+  { title: "PayPal", description: "Fast international withdrawals via PayPal.", image: img },
+  { title: "Visa", description: "Withdraw funds directly to your Visa debit/credit card.", image: img },
+  { title: "Mastercard", description: "Quick withdrawals supported on Mastercard cards.", image: img },
+  { title: "RuPay", description: "Domestic withdrawals via RuPay cards in India.", image: img },
+  { title: "IMPS", description: "Instant bank withdrawals using IMPS service.", image: img },
+  { title: "NEFT", description: "Standard withdrawals via NEFT bank transfer.", image: img },
+  { title: "RTGS", description: "High-value withdrawals with RTGS settlement.", image: img },
+  { title: "Crypto (BTC)", description: "Withdraw funds directly to your Bitcoin wallet.", image: img },
+  { title: "Crypto (ETH)", description: "Withdraw Ethereum securely to your crypto wallet.", image: img },
+  { title: "Crypto (USDT)", description: "Withdraw instantly via Tether (USDT).", image: img },
+  { title: "Wise (TransferWise)", description: "Withdraw internationally with low fees via Wise.", image: img },
+  { title: "Revolut", description: "Instant withdrawals for Revolut account holders.", image: img },
+  { title: "Cashfree", description: "Trusted Indian gateway for instant withdrawals.", image: img },
 ];
 
-const Paymentslogo = () => {
+const Collections = () => {
+  const [showAll, setShowAll] = useState(false);
+
+  // pehle sirf 6 dikhana
+  const visibleWithdrawals = showAll ? withdrawals : withdrawals.slice(0, 6);
+
   return (
     <div className={styles.pageWrap}>
       <section className={styles.postSliders}>
-        <h2 className={styles.sectionHeading}>withdrawal</h2>
+        <h2 className={styles.sectionHeading}>Withdrawal</h2>
+
         <div className={styles.postSlider}>
           {/* Header card */}
-          {/* Mini Card Grid (Generated with map) */}
-          <div className={styles.miniCardGrid}>
-            {skills.map((skill, index) => (
-              <article key={index} className={styles.miniCard}>
-                <h3 className={styles.miniCardTitle}>{skill.title}</h3>
-                <div className={styles.miniCardDescription}>
-                  {skill.description}
-                </div>
-                <img
-                  src={skill.image}
-                  alt={skill.title}
-                  className={styles.miniCardImg}
-                />
-              </article>
-            ))}
+          <div className={`${styles.postSliderHeader} ${styles.headerCard}`}>
+            <h2 className={styles.headerCardTitle}>Quick Withdrawal</h2>
+            <p className={styles.headerCardSponsor}>
+              With local payment options
+            </p>
           </div>
+
+          {/* Mini Card Grid */}
+          <div className={styles.miniCardGrid}>
+            <AnimatePresence>
+              {visibleWithdrawals.map((item, index) => (
+                <motion.article
+                  key={item.title}
+                  className={styles.miniCard}
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -40 }}
+                  transition={{ duration: 0.3, delay: index * 0.05 }}
+                >
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className={styles.miniCardImg}
+                  />
+                  <h3 className={styles.miniCardTitle}>{item.title}</h3>
+                </motion.article>
+              ))}
+            </AnimatePresence>
+          </div>
+        </div>
+
+        {/* View All / Show Less button */}
+        <div className={styles.btnWrap}>
+          <button
+            className={styles.viewAllBtn}
+            onClick={() => setShowAll(!showAll)}
+          >
+            {showAll ? "Show Less" : "View All"}
+          </button>
         </div>
       </section>
     </div>
   );
 };
 
-export default Paymentslogo;
+export default Collections;

@@ -1,4 +1,3 @@
-
 :root {
   --background-color: #262626;
   --text-color: #fff;
@@ -8,7 +7,6 @@
   --card-padding: 1.5rem;
   --card-shadow: 0 -8px 15px rgba(0, 0, 0, 0.85);
   --card-margin: 60px;
-  --mini-card-min-size: 300px;
   --mini-card-border-radius: 16px;
   --scrollbar-height: 4px;
   --scrollbar-color: #666;
@@ -29,12 +27,13 @@
   font-weight: 800;
   font-size: var(--heading-font-size);
   margin-bottom: -6vw;
+  text-align: center;
 }
 
 .postSlider {
-  /* background: var(--background-color); */
   box-shadow: var(--card-shadow);
   display: flex;
+  flex-direction: column;
   margin: 0 0 var(--card-margin) 0;
   padding: 0 32px 32px;
   position: relative;
@@ -42,207 +41,120 @@
 
 .postSliderHeader {
   color: var(--text-color);
-  margin-top: 2rem;
-  flex: 0 0 250px;
-  margin-right: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  margin: 2rem auto 1rem auto;
+  text-align: center;
   padding: var(--header-card-padding);
-  transform: translateY(-10px);
   position: relative;
-}
-
-.postSliderHeader::before {
-  content: "";
-  background: linear-gradient(130deg, #ff7a18 0%, #af002d 41.07%, #319197 76.05%);
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  width: calc(100% + 10px);
-  height: calc(100% + 10px);
-  z-index: 1;
-  border-radius: 12px;
-}
-
-.postSliderHeader::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  z-index: 2;
-  border-radius: 8px;
-}
-
-.headerCard * {
-  color: var(--text-color);
-  position: relative;
-  z-index: 3;
-  font-size: 15px;
 }
 
 .headerCardTitle {
   font-weight: 800;
   font-size: 25px;
   line-height: 1.1;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
+/* ✅ GRID LAYOUT */
 .miniCardGrid {
-  padding: 3rem 0 3rem 2rem;
-  display: flex;
-  overflow-x: scroll;
-  gap: 1rem;
-  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* desktop */
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .miniCardGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .miniCardGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .miniCard {
-  min-width: var(--mini-card-min-size);
-  min-height: var(--mini-card-min-size);
-  box-shadow: -2rem 0 3rem -2rem #000;
-  padding: var(--card-padding);
+  min-height: 180px;
   border-radius: var(--mini-card-border-radius);
-  background: linear-gradient(85deg, #434343, #262626);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: var(--text-color);
   display: flex;
   flex-direction: column;
-  transition: 0.2s;
-  cursor: pointer;
-}
-
-.miniCard:not(:first-child) {
-  margin-left: -130px;
-  box-shadow: -3rem 0 3rem -2rem #000;
-}
-
-.miniCard time {
-  display: block;
-  margin: 0 0 0.25rem 0;
-  color: #777;
-}
-
-.miniCardTitle {
-  font-size: 1.3rem;
-  margin: 0 0 1rem 0;
-  font-weight: 800;
-  letter-spacing: 0.03rem;
-}
-
-.miniCard a {
-  color: var(--text-color);
-}
-
-.authorRow {
-  display: grid;
-  grid-template-columns: 40px 1fr;
-  gap: 0.5rem;
   align-items: center;
-  color: #565656;
-  line-height: 1.3;
-  padding-top: 0.5rem;
-}
-
-.avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 0.5rem;
-}
-
-.miniCardDescription {
-  display: block;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  color: #c0bb79;
-  font-size: 14px;
-}
-
-.miniCard:hover ~ .miniCard {
-  transform: translateX(130px);
-}
-
-.miniCard:first-child:hover {
-  transform: translate(-0.5rem, -1rem) rotate(3deg);
+  justify-content: center;
+  transition: 0.3s;
+  cursor: pointer;
+  padding: 1rem;
+  text-align: center;
 }
 
 .miniCard:hover {
-  transform: translateY(-1rem) rotate(3deg);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
 }
 
-.miniCardGrid::-webkit-scrollbar {
-  height: var(--scrollbar-height);
-  background-color: var(--scrollbar-bg);
+.miniCardImg {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 0.8rem;
+  transition: transform 0.3s;
 }
 
-.miniCardGrid::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbar-color);
-  border-radius: 3px;
+.miniCard:hover .miniCardImg {
+  transform: scale(1.15) rotate(-5deg);
 }
 
-.miniCardGrid::-webkit-scrollbar-button {
-  display: none;
+.miniCardTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s, transform 0.3s;
 }
 
-/* ---------------------------------
-  Responsive CSS for mobile devices
-  --------------------------------- */
-@media (max-width: 768px) {
-  .pageWrap {
-    padding: 0 20px;
-  }
+.miniCard:hover .miniCardTitle {
+  color: #ff7a18;
+  transform: translateY(-2px);
+}
 
-  .postSliders {
-    padding-top: 30px;
-  }
+.miniCardDescription {
+  font-size: 0.85rem;
+  color: #c0bb79;
+  transition: color 0.3s, transform 0.3s;
+}
 
-  .sectionHeading {
-    font-size: 10vw;
-    margin-bottom: -8vw;
-  }
+.miniCard:hover .miniCardDescription {
+  color: #fff;
+  transform: translateY(-3px);
+}
 
-  .postSlider {
-    flex-direction: column;
-    padding: 0 16px 16px;
-    margin-bottom: 30px;
-  }
+/* ---------------------
+   View All Button
+--------------------- */
+.btnWrap {
+  text-align: center;
+  margin-top: 2rem;
+}
 
-  .postSliderHeader {
-    flex: auto;
-    width: 100%;
-    margin-right: 0;
-    margin-top: 20px;
-    transform: none;
-  }
+.viewAllBtn {
+  background: linear-gradient(90deg, #ff7a18, #af002d, #a5314e);
+  color: #fff;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-  .miniCardGrid {
-    padding: 2rem 0 2rem 1rem;
-    gap: 16px;
-  }
-
-  .miniCard {
-    min-width: 250px;
-    min-height: 250px;
-    padding: 1rem;
-  }
-  
-  /* Reset hover effects for touch devices to avoid unexpected behavior */
-  .miniCard:hover {
-    transform: none;
-  }
-
-  .miniCard:hover ~ .miniCard {
-    transform: none;
-  }
-
-  .miniCard:first-child:hover {
-    transform: none;
-  }
-
-  .miniCard:not(:first-child) {
-    margin-left: 0;
-    box-shadow: none;
-  }
+.viewAllBtn:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
 }

@@ -1,27 +1,20 @@
 .footer {
-  padding: 2.5rem 2rem 1.5rem;
-  background: transparent; /* fixed background visible */
+  padding: 2.5rem 1.5rem 1.5rem;
+  background: transparent;
   color: #ffffff;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
-
-  position: relative;  /* ✅ Add this */
-  z-index: 50;         /* ✅ High value so it stays clickable */
+  position: relative;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-/* Top row (Navbar style) */
 .navRow {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
   align-items: center;
-  gap: 1.5rem;
-  justify-content: space-between;
-  margin-bottom: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .navRow {
-    flex-direction: row;
-  }
 }
 
 .logo {
@@ -33,26 +26,29 @@
 .navLinks {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  flex-direction: column;
+  gap: 0.5rem;
   padding: 0;
   margin: 0;
+  align-items: center;
 }
 
 .navLinks li a {
   color: #d1d5db;
   font-size: 0.95rem;
-  transition: color 0.2s ease;
-  text-decoration: none;
   font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .navLinks li a:hover {
-  color: #e11d48; /* red accent */
+  color: #e11d48;
 }
 
 .socials {
   display: flex;
-  gap: 1.2rem;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .socials a {
@@ -66,12 +62,10 @@
   transform: scale(1.15);
 }
 
-/* Bottom row */
 .bottomRow {
   text-align: center;
   font-size: 0.9rem;
   color: #9ca3af;
-  margin-top: 1rem;
 }
 
 .disclaimer {
@@ -82,4 +76,23 @@
 .copy {
   font-size: 0.85rem;
   color: #6b7280;
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
+  .navRow {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+
+  .navLinks {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .socials {
+    justify-content: flex-end;
+  }
 }
