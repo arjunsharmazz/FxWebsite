@@ -1,148 +1,159 @@
 .page {
   display: flex;
-  min-height: 100vh;
-  /* background: #0b0b0f; */
+  height: 100vh;
+  /* background: linear-gradient(135deg, #0b0c10, #1a1a1a); */
   color: #fff;
-  font-family: "Inter", sans-serif;
+  font-family: "Orbitron", sans-serif;
 }
 
 .left {
   flex: 3;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 15px;
 }
 
-.balance {
-  font-weight: 600;
-  color: #00ff9d;
+.balance span {
+  color: #ff2b2b; /* red accent */
+  font-weight: bold;
 }
 
 .dropdown {
-  margin-bottom: 1rem;
+  margin-bottom: 15px;
   display: flex;
-  gap: 0.5rem;
   align-items: center;
+  background: rgba(12, 12, 12, 0.15);
+  gap: 10px;
 }
+
 .dropdown select {
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: #1e1e25;
-  color: #fff;
-  border: 1px solid #333;
+  background: rgba(12, 12, 12, 0.15);
+  border: 1px solid rgba(255, 0, 0, 0.4);
+  padding: 8px 12px;
+  color: #8f1212;
+  border-radius: 8px;
+  backdrop-filter: blur(12px);
 }
 
 .chartBox {
   flex: 1;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 20px rgba(255, 59, 59, 0.15);
+  /* background: rgba(255, 255, 255, 0.03); */
+  border-radius: 16px;
+  padding: 10px;
+  box-shadow: 0 4px 20px rgba(255, 0, 0, 0.25);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 0, 0, 0.2);
 }
 
 .chart {
   width: 100%;
-  height: 400px;
-  display: block;
+  height: 300px;
 }
 
 .priceRow {
-  margin-top: 0.8rem;
   display: flex;
   justify-content: space-between;
-  font-size: 0.95rem;
+  margin-top: 10px;
+  color: #ccc;
 }
 
 .panel {
   flex: 1;
-  padding: 1.5rem;
-  background: #121217;
-  border-left: 1px solid rgba(255, 255, 255, 0.08);
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  /* background: rgba(255, 255, 255, 0.05); */
+  backdrop-filter: blur(18px);
+  border-left: 1px solid rgba(255, 0, 0, 0.2);
+  padding: 20px;
 }
 
 .tradeBox {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
+  margin-bottom: 20px;
 }
 
 .tradeBox input {
+  width: 100%;
   padding: 8px;
-  border-radius: 6px;
-  background: #1e1e25;
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  border-radius: 8px;
+  margin-bottom: 12px;
   color: #fff;
-  border: 1px solid #333;
 }
 
 .actions {
   display: flex;
-  gap: 1rem;
+  justify-content: space-between;
+  gap: 10px;
 }
 
-.buy, .sell {
+.actions button {
   flex: 1;
-  padding: 10px;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.2s;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
   border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+  transition: 0.3s;
 }
 
 .buy {
-  background: #00c676;
-}
-.buy:hover {
-  background: #00e28f;
+  background: linear-gradient(135deg, #ff2b2b, #ff6b6b);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(255, 43, 43, 0.6);
 }
 
 .sell {
-  background: #ff3b3b;
+  background: linear-gradient(135deg, #1f1f1f, #2c2c2c);
+  color: #ff2b2b;
+  border: 1px solid rgba(255, 43, 43, 0.5);
 }
-.sell:hover {
-  background: #ff5757;
+
+.actions button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(255, 0, 0, 0.7);
 }
 
 .history {
-  flex: 1;
+  max-height: 300px;
   overflow-y: auto;
-}
-.history h4 {
-  margin-bottom: 0.6rem;
-}
-
-.empty {
-  color: #888;
-  font-size: 0.9rem;
 }
 
 .histItem {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 0, 0, 0.08);
   padding: 8px;
-  border-radius: 6px;
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid rgba(255, 0, 0, 0.2);
 }
 
 .details {
   display: flex;
-  justify-content: space-between;
-  font-size: 0.8rem;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .profit {
   color: #00ff9d;
 }
+
 .loss {
-  color: #ff4b4b;
+  color: #ff2b2b;
+}
+
+.empty {
+  text-align: center;
+  opacity: 0.6;
 }

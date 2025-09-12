@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import styles from "./css/KeyFeatures.module.css";
 import { Shield, Globe, Zap, Lock, TrendingUp, Smartphone } from "lucide-react";
 
@@ -36,40 +36,49 @@ const features = [
   }
 ];
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 60, scale: 0.95 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      delay: i * 0.2, // 👈 stagger by index
+      duration: 0.7,
+      ease: "easeOut"
+    }
+  })
+};
+
 const KeyFeatures = () => {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"]
-  });
-
-  // odd-even cards ko ulta parallax dena
-  const offsets = [
-    useTransform(scrollYProgress, [0, 1], [50, -50]),
-    useTransform(scrollYProgress, [0, 1], [-50, 50]),
-    useTransform(scrollYProgress, [0, 1], [40, -40]),
-    useTransform(scrollYProgress, [0, 1], [-40, 40]),
-    useTransform(scrollYProgress, [0, 1], [30, -30]),
-    useTransform(scrollYProgress, [0, 1], [-30, 30]),
-  ];
+  const isInView = useInView(ref, { once: true, margin: "-50px" }); // 👈 animate only once when in view
 
   return (
-    <section className={styles.section} ref={ref}>
-      <h2 className={styles.title}>
-        Why <span className={styles.highlight}>Trade With Us?</span>
-      </h2>
+    <section className={styles.kfSection} ref={ref}>
+      <motion.h2
+        className={styles.kfTitle}
+        initial={{ opacity: 0, y: -40 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        Why <span className={styles.kfHighlight}>Trade With Us?</span>
+      </motion.h2>
 
-      <div className={styles.grid}>
+      <div className={styles.kfGrid}>
         {features.map((f, i) => (
           <motion.div
             key={i}
-            className={styles.card}
-            style={{ y: offsets[i] }} // 👈 parallax link
-            whileHover={{ scale: 1.05 }}
+            className={styles.kfCard}
+            custom={i}
+            variants={cardVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            whileHover={{ scale: 1.05, boxShadow: "0 12px 30px rgba(255,44,44,0.4)" }}
           >
-            <div className={styles.icon}>{f.icon}</div>
-            <h3 className={styles.cardTitle}>{f.title}</h3>
-            <p className={styles.desc}>{f.desc}</p>
+            <div className={styles.kfIcon}>{f.icon}</div>
+            <h3 className={styles.kfCardTitle}>{f.title}</h3>
+            <p className={styles.kfDesc}>{f.desc}</p>
           </motion.div>
         ))}
       </div>

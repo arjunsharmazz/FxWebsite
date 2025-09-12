@@ -5,27 +5,15 @@ import styles from "./MainLayout.module.css";
 import Navbar from "../componenets/Navbar";
 import StarsEffect from "../componenets/StarsEffect";
 import Footer from "../componenets/Footer";
+import img from "../assets/back.png";
 
 const MainLayout = () => {
   const bgRef = useRef(null);
-
-  useEffect(() => {
-    const bg = bgRef.current;
-    const handleMouseMove = (e) => {
-      const { innerWidth, innerHeight } = window;
-      const x = (e.clientX / innerWidth) * 100;
-      const y = (e.clientY / innerHeight) * 100;
-      bg.style.backgroundPosition = `${x}% ${y}%`;
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
   return (
     <>
       {/* Fixed Background */}
       <div ref={bgRef} className={styles.homeContainer}>
-        <StarsEffect />
+        {/* <StarsEffect /> */}
       </div>
 
       {/* Fixed Navbar */}

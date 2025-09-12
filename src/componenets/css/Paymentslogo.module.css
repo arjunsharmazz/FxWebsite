@@ -25,6 +25,7 @@
 
 .sectionHeading {
   font-weight: 800;
+  color:white;
   font-size: var(--heading-font-size);
   margin-bottom: -6vw;
   text-align: center;

@@ -27,7 +27,7 @@ import Paymentslogo from "../componenets/Paymentslogo.js";
 const Home = () => {
   return (
     <>
-      <Hero />
+      <Hero />  
       <MarketTicker />
       <AnytimeSection />
       <KeyFeatures />

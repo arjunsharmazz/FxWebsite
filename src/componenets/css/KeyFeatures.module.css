@@ -1,59 +1,71 @@
-.section {
+.kfSection {
   background: transparent;
   padding: 6rem 2rem;
   color: #fff;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.title {
-  font-size: 2.5rem;
+.kfTitle {
+  font-size: 2.3rem;
   font-weight: 700;
   margin-bottom: 3rem;
 }
 
-.highlight {
+.kfHighlight {
   color: #ff2c2c;
 }
 
-.grid {
+.kfGrid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.card {
+.kfCard {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 2rem;
   border-radius: 1rem;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
-  box-shadow: 0 10px 20px rgba(255, 44, 44, 0.35);
+.kfCard:hover {
+  transform: translateY(-5px) scale(1.02);
 }
 
-.icon {
+.kfIcon {
   color: #ff2c2c;
   margin-bottom: 1rem;
 }
 
-.cardTitle {
-  font-size: 1.3rem;
+.kfCardTitle {
+  font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.6rem;
 }
 
-.desc {
-  font-size: 1rem;
+.kfDesc {
+  font-size: 0.95rem;
   line-height: 1.5;
   color: #dcdcdc;
 }
 
+/* Responsive Grid */
 @media (min-width: 768px) {
-  .grid {
+  .kfGrid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .kfGrid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
