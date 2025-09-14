@@ -1,0 +1,89 @@
+.container {
+  display: flex;
+  height: 100vh;
+  background: #0e0e0e;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  width: 120px;
+  background: #151515;
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 20px 0;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.chartSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.panel {
+  width: 220px;
+  background: #151515;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  font-size: 12px;
+  margin-bottom: 5px;
+  color: #aaa;
+}
+
+.field input {
+  background: #222;
+  border: none;
+  padding: 8px;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.buy {
+  background: #26a69a;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.sell {
+  background: #ef5350;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.profit {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #ddd;
+}

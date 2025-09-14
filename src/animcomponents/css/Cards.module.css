@@ -1,0 +1,205 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+  position: relative;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  background: transparent;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.hide {
+  display: none;
+}
+
+/* Grid layout for large screens */
+@media only screen and (min-width: 800px) {
+  .wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(calc(8rem + 5vw + 5vh), 1fr));
+    grid-gap: 2.5vmin;
+    padding: 2.5vmin;
+  }
+  #dense:checked + .wrap {
+    grid-auto-flow: dense;
+  }
+
+  figure:first-child {
+    grid-row-start: span 3;
+    grid-column-start: span 3;
+  }
+  figure:nth-child(2n+3) {
+    grid-row-start: span 3;
+  }
+  figure:nth-child(4n+5) {
+    grid-column-start: span 2;
+    grid-row-start: span 2;
+  }
+  figure:nth-child(6n+7) {
+    grid-row-start: span 2;
+  }
+  figure:nth-child(8n+9) {
+    grid-column-start: span 2;
+    grid-row-start: span 3;
+  }
+
+figure {
+  position: relative; /* ensure figcaption is positioned correctly */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+  figure:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.4s ease;
+  }
+
+  img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Number badge */
+  figure::after {
+    content: counter(numImg);
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 4rem;
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Caption glass effect */
+figcaption {
+  position: absolute; /* position over the image */
+  bottom: 0; /* stick to bottom */
+  left: 0;
+  width: 100%; /* full width */
+  background: rgba(0, 0, 0, 0.5); /* dark semi-transparent */
+  color: #fff;
+  padding: 0.8rem 1rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  z-index: 10; /* above image */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+}
+
+/* General transitions */
+figure,
+img {
+  transition: .4s;
+}
+
+/* Toggle button */
+.toggle {
+  background: rgba(73, 107, 123, .75);
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  font-weight: 100;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 2px;
+  padding: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 3px rgba(25, 42, 46, .75);
+}
+.toggle span {
+  background: #b1cccb;
+  display: block;
+  font-variant: small-caps;
+  font-size: 150%;
+  color: #496b7b;
+}
+.toggle span::after {
+  content: " initial";
+}
+#dense:checked ~ .toggle span:after {
+  content: " dense";
+}
+
+/* Links */
+a {
+  color: #f7e371;
+  text-decoration: none;
+}
+
+/* Mobile responsive layout */
+@media only screen and (max-width: 799px) {
+  .wrap {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  figure {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  figure::after {
+    font-size: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  }
+
+  figcaption {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.8rem;
+    background: rgba(0, 0, 0, 0.55);
+  }
+
+  .toggle {
+    font-size: 1.2rem;
+    padding: 0.6rem;
+  }
+  .toggle span {
+    font-size: 120%;
+  }
+}

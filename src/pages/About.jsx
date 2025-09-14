@@ -5,6 +5,7 @@ import img from "../assets/dash.png";
 import img2 from "../assets/dash2.png";
 import FaqSection from "../componenets/FaqSection";
 import TradeSection from "../componenets/TradeSection";
+import TradingPage from "../charts/TradingPage";
 const fadeUp = (d = 0) => ({
   initial: { opacity: 0, y: 32 },
   whileInView: { opacity: 1, y: 0 },
@@ -65,6 +66,7 @@ export default function About() {
 
   return (
     <div className={styles.page}>
+      {/* <TradingPage/> */}
       {/* HERO */}
       <section className={styles.hero}>
         <motion.div className={styles.heroArt} style={{ y: yHero }}>

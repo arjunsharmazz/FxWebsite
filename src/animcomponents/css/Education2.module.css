@@ -1,0 +1,50 @@
+:root {
+  --background-color: #262626;
+  --text-color: #fff;
+  --primary-font: "Poppins", serif;
+  --heading-font-size: 12vw;
+  --card-margin: 60px;
+}
+
+.pageWrap {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.postSliders {
+  /* padding-top: calc(60px * 1.5); */
+}
+
+.sectionHeading {
+  font-weight: 800;
+  color: white;
+  font-size: var(--heading-font-size);
+  margin-bottom: -3vw;
+  text-align: center;
+  line-height: 1.1;
+}
+
+/* ✅ Tablet (max 1024px) */
+@media (max-width: 1024px) {
+  .sectionHeading {
+    font-size: 8vw;
+    margin-bottom: -4vw;
+  }
+
+  .pageWrap {
+    padding: 0 40px;
+  }
+}
+
+/* ✅ Mobile (max 600px) */
+@media (max-width: 600px) {
+  .sectionHeading {
+    font-size: 12vw; /* Large but fits screen */
+    margin-bottom: -2vw;
+  }
+
+  .pageWrap {
+    padding: 0 20px;
+  }
+}

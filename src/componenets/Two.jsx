@@ -52,7 +52,7 @@ export default function Two() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              🚀 Start Trading
+             Start Trading
             </motion.button>
             
             <motion.button 
@@ -60,7 +60,7 @@ export default function Two() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              📖 Learn More
+              Learn More
             </motion.button>
           </div>
         </motion.div>

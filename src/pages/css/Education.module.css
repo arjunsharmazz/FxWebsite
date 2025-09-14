@@ -9,7 +9,7 @@
 .page {
   min-height: 100vh;
   padding: 4rem 2rem;
-  background: radial-gradient(circle at top, #0b0b0f, #000);
+  /* background: radial-gradient(circle at top, #0b0b0f, #000); */
   color: var(--text);
   font-family: "Poppins", sans-serif;
 }
