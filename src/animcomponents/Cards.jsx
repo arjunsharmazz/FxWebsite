@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./css/Cards.module.css";
+import Education2 from "./Education2";
 
 const videos = [
   {
@@ -79,8 +80,9 @@ const videos = [
 const Cards = () => {
   return (
     <>
+              <Education2 name="Education"/>
       <div className={styles.wrap}>
-        {videos.map((video) => (
+        {videos.map((video) => (  
           <figure key={video.id}>
             <a href={video.url} target="_blank" rel="noopener noreferrer">
               <img src={video.thumb} alt={video.caption} />
