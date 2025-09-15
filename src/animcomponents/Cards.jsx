@@ -76,8 +76,6 @@ const videos = [
   }
 ];
 
-
-
 const Cards = () => {
   return (
     <>
@@ -91,7 +89,6 @@ const Cards = () => {
           </figure>
         ))}
       </div>
-
     </>
   );
 };

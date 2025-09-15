@@ -49,7 +49,7 @@ export default function EducationResources() {
   const [activeIndex, setActiveIndex] = useState(1);
   const [isMobile, setIsMobile] = useState(false);
 
-  // ✅ Detect screen size
+
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 992);
     handleResize();
@@ -70,7 +70,7 @@ export default function EducationResources() {
       <h2 className={styles.heading}>What Our Traders Say</h2>
 
       <div className={styles.carouselContainer}>
-        {/* ✅ Mobile view: fast slide+fade */}
+        {/*Mobile*/}
         {isMobile ? (
           <AnimatePresence mode="wait">
             <motion.div
@@ -96,7 +96,7 @@ export default function EducationResources() {
             </motion.div>
           </AnimatePresence>
         ) : (
-          // ✅ Desktop view: snappy spring carousel
+          // Desktop 
           data.map((item, i) => {
             const offset = i - activeIndex;
             return (
@@ -131,7 +131,7 @@ export default function EducationResources() {
         )}
       </div>
 
-      {/* ✅ Nav Buttons */}
+      {/*Nav */}
       <div className={styles.navWrapper}>
         <motion.button
           onClick={prevSlide}
@@ -151,7 +151,7 @@ export default function EducationResources() {
         </motion.button>
       </div>
 
-      {/* ✅ Dots */}
+      {/* Dots */}
       <div className={styles.dots}>
         {data.map((_, i) => (
           <motion.button

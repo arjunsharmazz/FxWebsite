@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "./css/AboutSection.module.css";
-import manImage from "../assets/sopiha.png"; // apna image import karo
+import manImage from "../assets/sopiha.png"; 
 
 export default function AboutSection() {
   return (

@@ -18,19 +18,18 @@ import { AuthProvider } from "./context/AuthContext";
 import Education from "./pages/Education";
 
 
-// ✅ ScrollToTop component sahi tarike se
 function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // body scroll reset
+
     document.documentElement.scrollTo({
       top: 0,
       left: 0,
-      behavior: "smooth", // "smooth" bhi use kar sakte ho
+      behavior: "smooth", 
     });
 
-    // fallback in case <body> scrollable hai
+  
     document.body.scrollTo({
       top: 0,
       left: 0,
@@ -48,7 +47,6 @@ function App() {
       <BrowserRouter>
         <AuthProvider>
           <OfferOverlay />
-          {/* 👇 BrowserRouter ke andar, Routes ke bahar hona chahiye */}
           <ScrollToTop />  
           <Routes>
             <Route path="/" element={<MainLayout />}>
