@@ -1,0 +1,237 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* full page */
+  width: 100%;
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+.inner3d {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  transform: rotateX(15deg) rotateY(-10deg);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.marqueeInner {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  animation: scrollUp 20s linear infinite;
+}
+
+.reverse .marqueeInner {
+  animation: scrollDown 20s linear infinite;
+}
+
+@keyframes scrollUp {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes scrollDown {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+/* 🔥 Stylish Glass Cards */
+.card {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(16px) saturate(180%);
+  border-radius: 16px;
+  padding: 1.5rem;
+  width: 16rem;
+  min-height: 10rem;
+  color: white;
+  font-size: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: scale(1.08) translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.user img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.user figcaption {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.user p {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+blockquote {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* 🔥 Soft fade overlays */
+.overlay {
+  position: absolute;
+  pointer-events: none;
+}
+
+.top {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 15%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.bottom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 15%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.left {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 15%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.right {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 15%;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent);
+}
+
+/* 📱 Responsive */
+@media (max-width: 1024px) {
+  .inner3d {
+    gap: 1.5rem;
+    transform: rotateX(10deg) rotateY(-5deg);
+  }
+
+  .card {
+    width: 14rem;
+    min-height: 9rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    height: auto;
+    padding: 4rem 1rem;
+    perspective: none;
+  }
+
+  .inner3d {
+    flex-direction: column;
+    transform: none;
+    gap: 1.5rem;
+  }
+
+  .column {
+    flex-direction: row;
+    overflow-x: auto;
+    height: auto;
+  }
+
+  .marqueeInner {
+    flex-direction: row;
+    animation: scrollLeft 20s linear infinite;
+  }
+
+  .reverse .marqueeInner {
+    animation: scrollRight 20s linear infinite;
+  }
+
+  @keyframes scrollLeft {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes scrollRight {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+
+  .card {
+    width: 12rem;
+    min-height: auto;
+    font-size: 0.9rem;
+  }
+
+  .user img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 10rem;
+    padding: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .user img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .user figcaption {
+    font-size: 1rem;
+  }
+
+  .user p {
+    font-size: 0.75rem;
+  }
+}

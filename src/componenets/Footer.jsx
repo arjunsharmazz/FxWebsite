@@ -17,6 +17,7 @@ const Footer = () => {
           <li><Link to="/terms">Terms & Conditions</Link></li>
           <li><Link to="/education">Education</Link></li>
           <li><Link to="/news">News</Link></li>
+          <li><Link to="/review">Review</Link></li>
         </ul>
 
         <div className={styles.socials}>

@@ -16,6 +16,7 @@ import DemoTrade from "./pages/DemoTrade";
 import OfferOverlay from "./componenets/OfferOverlay"; 
 import { AuthProvider } from "./context/AuthContext";
 import Education from "./pages/Education";
+import Review from "./pages/Review";
 
 
 function ScrollToTop() {
@@ -62,6 +63,7 @@ function App() {
               <Route path="/terms" element={<Term />} />
               <Route path="/demo" element={<DemoTrade />} />
               <Route path="/education" element={<Education />} />
+              <Route path="/review" element={<Review />} />
             </Route>
           </Routes>
         </AuthProvider>
