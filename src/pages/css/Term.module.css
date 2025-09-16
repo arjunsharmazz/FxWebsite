@@ -1,79 +1,69 @@
-:root {
-  --bg-dark: #0a0a0a;
-  --accent: #ff3b3b;
-  --glass: rgba(255, 255, 255, 0.08);
-  --text: #ffffff;
-  --text-muted: #cccccc;
-}
-
 .page {
   min-height: 100vh;
-  padding: 3rem 1.5rem;
-  /* background: radial-gradient(circle at top, #0d0d0d, #000); */
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  font-family: "Poppins", sans-serif;
+  padding: 40px 20px;
+  font-family: "Inter", sans-serif;
+  background: transparent; /* page fully transparent */
 }
 
-.glassCard {
-  width: 100%;
-  max-width: 950px;
-  /* background: var(--glass); */
-  /* backdrop-filter: blur(18px) saturate(200%);
-  -webkit-backdrop-filter: blur(18px) saturate(200%); */
-  border-radius: 24px;
-  /* border: 1px solid rgba(255, 255, 255, 0.12); */
-  padding: 2.5rem;
-  color: var(--text);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+.container {
+  max-width: 900px;
+  border-radius: 16px;
+  padding: 40px;
+  background: transparent; /* transparent container */
+  box-shadow: none; /* remove white shadow */
 }
 
 .heading {
-  font-size: 2.6rem;
-  font-weight: 800;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #fff; /* white heading */
   text-align: center;
-  margin-bottom: 1.5rem;
-  color: var(--accent);
-  letter-spacing: 1px;
-  text-shadow: 0 0 12px rgba(255, 59, 59, 0.6);
 }
 
 .intro {
+  font-size: 1rem;
+  color: #ddd; /* light gray text */
+  margin-bottom: 30px;
   text-align: center;
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  margin-bottom: 2rem;
   line-height: 1.6;
 }
 
 .brand {
-  color: var(--accent);
-  font-weight: 700;
+  color: #ff5555; /* red accent for brand */
+  font-weight: 600;
 }
 
-.sectionWrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .section {
-  padding: 1.5rem;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.05); /* subtle glass effect */
+  padding: 20px;
+  border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
+.section:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
 .section h2 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-  color: var(--accent);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #fff; /* white subheading */
 }
 
 .section p {
-  font-size: 1rem;
+  font-size: 0.95rem;
+  color: #ccc; /* softer gray for readability */
   line-height: 1.6;
-  color: var(--text-muted);
 }

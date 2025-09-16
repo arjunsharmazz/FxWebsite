@@ -9,11 +9,11 @@ import CTABanner from "../componenets/CTABanner";
 const Education = () => {
   return (
     <div className={styles.page}>
-      <Education2 />
+     <Education2 />
      <Cards/>
      <YouTubeCards/>
      <CTABanner/>
-     
+    
     </div>
   );
 };

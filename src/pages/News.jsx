@@ -10,6 +10,7 @@ import news6 from "../assets/news6.png";
 import news7 from "../assets/news7.png";
 import news8 from "../assets/news8.png";
 import news9 from "../assets/news9.png";
+import StepsSection from "../componenets/StepsSection";
 
 const newsData = [
   {
@@ -77,6 +78,7 @@ const fadeInUp = {
 
 const News = () => {
   return (
+    <>
     <div className={styles.newsWrapper}>
       {/* Header */}
       <motion.header
@@ -162,6 +164,8 @@ const News = () => {
         ))}
       </div>
     </div>
+    <StepsSection/>
+    </>
   );
 };
 
