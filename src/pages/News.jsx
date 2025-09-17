@@ -11,6 +11,7 @@ import news7 from "../assets/news7.png";
 import news8 from "../assets/news8.png";
 import news9 from "../assets/news9.png";
 import StepsSection from "../componenets/StepsSection";
+import Education2 from "../animcomponents/Education2";
 
 const newsData = [
   {
@@ -89,10 +90,10 @@ const News = () => {
         transition={{ duration: 0.6 }}
         variants={fadeInUp}
       >
-        <h1 className={styles.title}>Latest Forex News</h1>
-        <p className={styles.subtitle}>
+              <Education2 name="Forex News"/>
+                      {/* <p className={styles.subtitle}>
           Market insights, updates and reports to help you stay ahead in trading.
-        </p>
+        </p> */}
       </motion.header>
 
       {/* Featured News */}

@@ -10,6 +10,7 @@ const links = [
   { label: "Contact", path: "/contact" },
   { label: "Live", path: "/liveforex" },
   { label: "News", path: "/news" },
+  { label: "Live2", path: "/liveforex2" },
 ];
 
 const itemVariants = {

@@ -9,7 +9,7 @@ function Review() {
     <div>
       <Marquee3D/>
       <EducationResources/>
-      <Paymentslogo/>
+      {/* <Paymentslogo/> */}
       <CTABanner/>
     </div>
   )

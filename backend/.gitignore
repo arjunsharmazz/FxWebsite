@@ -43,3 +43,4 @@ coverage/
 # MongoDB local database files (if using local db)
 data/db
 dump/
+.vercel

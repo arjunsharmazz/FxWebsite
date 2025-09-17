@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     setIsLoggedIn(false);
-    navigate("/"); // redirect to home
+    navigate("/"); 
   };
 
   return (

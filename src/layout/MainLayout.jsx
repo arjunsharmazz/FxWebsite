@@ -11,19 +11,19 @@ const MainLayout = () => {
   const bgRef = useRef(null);
   return (
     <>
-      {/* Fixed Background */}
+
       <div ref={bgRef} className={styles.homeContainer}>
         {/* <StarsEffect /> */}
       </div>
 
-      {/* Fixed Navbar */}
+
       <Navbar />
 
-      {/* Scrollable Pages */}
+
       <div className={styles.pageContent}>
         <Outlet />
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

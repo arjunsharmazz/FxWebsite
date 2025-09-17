@@ -17,6 +17,8 @@ import OfferOverlay from "./componenets/OfferOverlay";
 import { AuthProvider } from "./context/AuthContext";
 import Education from "./pages/Education";
 import Review from "./pages/Review";
+import CurrencyChart from "./charts/CurrencyChart";
+import TradingPanel from "./charts/TradingPanel";
 
 
 function ScrollToTop() {
@@ -58,7 +60,8 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/help" element={<Help />} />
               <Route path="/news" element={<News />} />
-              <Route path="/liveforex" element={<LiveForex />} />
+              <Route path="/liveforex" element={<TradingPanel />} />
+              <Route path="/liveforex2" element={<CurrencyChart />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/terms" element={<Term />} />
               <Route path="/demo" element={<DemoTrade />} />

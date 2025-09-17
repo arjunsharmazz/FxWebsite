@@ -1,0 +1,60 @@
+.container {
+  padding: 20px;
+  font-family: "Inter", sans-serif;
+  color: #f0f0f0;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  background: rgba(20, 20, 20, 0.8);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  font-size: 14px;
+  color: #e0e0e0;
+}
+
+.rowLabel {
+  font-weight: 600;
+  background: rgba(255,255,255,0.08);
+  color: #ffffff;
+}
+
+.cell {
+  font-weight: 500;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.positive {
+  background: rgba(0, 255, 128, 0.2);
+  color: #00ff88;
+}
+
+.negative {
+  background: rgba(255, 77, 77, 0.2);
+  color: #ff4d4d;
+}
+
+.neutral {
+  background: rgba(255, 255, 255, 0.05);
+  color: #cccccc;
+}
+
+.cell:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
