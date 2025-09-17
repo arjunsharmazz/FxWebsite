@@ -64,7 +64,7 @@ function App() {
               <Route path="/liveforex2" element={<CurrencyChart />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/terms" element={<Term />} />
-              <Route path="/demo" element={<DemoTrade />} />
+              <Route path="/demo" element={<TradingPanel />} />
               <Route path="/education" element={<Education />} />
               <Route path="/review" element={<Review />} />
             </Route>

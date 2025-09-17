@@ -2,14 +2,11 @@
   display: flex;
   height: 100vh;
   font-family: "Inter", sans-serif;
-  /* background: #0b0b0d; */
   color: #e6e6e6;
 }
 
-/* Sidebar */
 .sidebar {
   width: 80px;
-  /* background: #111; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,7 +38,6 @@
   color: #fff;
 }
 
-/* Main area */
 .main {
   flex: 1;
   display: flex;
@@ -52,7 +48,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background: #111; */
   padding: 12px 20px;
   border-bottom: 1px solid #222;
 }
@@ -89,7 +84,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  /* background: rgba(11, 11, 13, 0.8); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,10 +91,8 @@
   font-size: 16px;
 }
 
-/* Right trade panel */
 .panel {
   width: 320px;
-  /* background: #111; */
   border-left: 1px solid #222;
   display: flex;
   flex-direction: column;
@@ -115,7 +107,6 @@
   color: #53b987;
 }
 
-/* Trade box */
 .tradeBox {
   background: #1a1a1d;
   padding: 16px;
@@ -153,10 +144,7 @@
   color: #fff;
 }
 
-.buyBtn:hover {
-  opacity: 0.9;
-}
-
+.buyBtn:hover,
 .sellBtn:hover {
   opacity: 0.9;
 }
@@ -193,7 +181,6 @@
   text-align: center;
 }
 
-/* Trades list */
 .tradesList {
   margin-top: 10px;
 }
@@ -276,4 +263,55 @@
 .closed {
   font-size: 12px;
   color: #bbb;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .panel {
+    width: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #222;
+    justify-content: space-around;
+  }
+
+  .main {
+    order: 2;
+  }
+
+  .panel {
+    order: 3;
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid #222;
+  }
+}
+
+@media (max-width: 480px) {
+  .topBar {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .controls {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .buyBtn,
+  .sellBtn {
+    font-size: 14px;
+    padding: 8px 0;
+  }
 }

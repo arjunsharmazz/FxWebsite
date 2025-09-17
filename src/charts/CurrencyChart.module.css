@@ -57,6 +57,7 @@
   gap: 10px;
   margin-top: 15px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .rangeBtn {
@@ -75,4 +76,34 @@
 .active {
   background: #1976d2;
   color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cardContainer {
+    justify-content: center;
+  }
+
+  .card {
+    min-width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 18px;
+  }
+
+  .card {
+    min-width: 100%;
+  }
+
+  .rangeButtons {
+    gap: 6px;
+  }
+
+  .rangeBtn {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
 }
