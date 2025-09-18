@@ -20,7 +20,8 @@ import "slick-carousel/slick/slick-theme.css";
 import FaqSection from "../componenets/FaqSection";
 import CTABanner from "../componenets/CTABanner";
 import Marquee3D from "../animcomponents/Marquee3D";
-
+import phone1 from "../assets/phone1.png";
+import phone2 from "../assets/phone2.png";
 function NextArrow({ onClick }) {
   return (
     <button className={`${styles.arrow} ${styles.next}`} onClick={onClick}>
@@ -88,14 +89,9 @@ export default function SocialMediaPage() {
 
         <div className={styles.heroPhones}>
           <img
-            src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80"
+            src={phone1}
             alt="Phone1"
             className={styles.phone1}
-          />
-          <img
-            src="https://images.unsplash.com/photo-1510552776732-01acc9a4c5a2?auto=format&fit=crop&w=400&q=80"
-            alt="Phone2"
-            className={styles.phone2}
           />
         </div>
       </section>
