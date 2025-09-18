@@ -19,6 +19,7 @@ import Education from "./pages/Education";
 import Review from "./pages/Review";
 import CurrencyChart from "./charts/CurrencyChart";
 import TradingPanel from "./charts/TradingPanel";
+import SocialMediaPage from "./pages/SocialMediaPage";
 
 
 function ScrollToTop() {
@@ -67,6 +68,7 @@ function App() {
               <Route path="/demo" element={<TradingPanel />} />
               <Route path="/education" element={<Education />} />
               <Route path="/review" element={<Review />} />
+              <Route path="/socialmedia" element={<SocialMediaPage />} />
             </Route>
           </Routes>
         </AuthProvider>

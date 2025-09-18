@@ -1,0 +1,265 @@
+.wrapper {
+  font-family: "Inter", sans-serif;
+  color: #fff;
+  background: transparent;
+  padding-bottom: 100px;
+}
+
+/* ==== Hero ==== */
+.hero {
+  text-align: center;
+  padding: 100px 20px 60px;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #00ffb3, #00c3ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero p {
+  color: #bbb;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.heroPhones {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.heroPhones img {
+  width: 220px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  transform: rotate(-3deg);
+}
+.heroPhones img:last-child {
+  transform: rotate(3deg);
+}
+
+/* ==== Socials ==== */
+.socials {
+  padding: 80px 40px;
+  text-align: center;
+}
+.socials h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.socialGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+.socialGrid div {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  padding: 20px;
+  border-radius: 18px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.socialGrid div:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+}
+
+/* ==== Trust ==== */
+.trust {
+  padding: 100px 40px;
+  text-align: center;
+}
+.trustGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+.trustGrid div {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  border-radius: 20px;
+  width: 280px;
+}
+.trustGrid h4 {
+  margin: 12px 0 8px;
+  font-size: 1.2rem;
+}
+
+/* ==== Community ==== */
+.community {
+  padding: 100px 40px;
+  text-align: center;
+}
+.community h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+.community p {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  color: #bbb;
+}
+.communityGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-bottom: 50px;
+}
+.communityGrid div {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 20px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+.communityGrid div:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-6px) scale(1.02);
+}
+
+/* ==== Stories ==== */
+.stories {
+  padding: 100px 40px;
+  text-align: center;
+}
+.stories h2 {
+  font-size: 2.3rem;
+  margin-bottom: 15px;
+}
+.stories p {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  color: #bbb;
+}
+
+.storyCard {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  overflow: hidden;
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.4s;
+}
+.storyCard:hover {
+  transform: translateY(-8px) scale(1.02);
+  background: rgba(255, 255, 255, 0.15);
+}
+.storyCard img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.storyContent {
+  padding: 18px;
+  text-align: left;
+}
+.storyContent h3 {
+  margin: 0 0 6px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.country {
+  color: #66e0ff;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+.storyContent p {
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+/* ==== CTA ==== */
+.cta {
+  padding: 120px 20px;
+  text-align: center;
+}
+.cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+.cta button {
+  margin-top: 20px;
+  background: linear-gradient(90deg, #00ffb3, #00c3ff);
+  color: #111;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.cta button:hover {
+  transform: scale(1.05);
+}
+.arrow {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  padding: 8px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 5;
+  transition: 0.3s;
+}
+.arrow:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+.next {
+  right: -30px;
+}
+.prev {
+  left: -30px;
+}
+/* ==== Testimonials inside Community ==== */
+.testimonial {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  padding: 30px 20px;
+  border-radius: 20px;
+  margin: 20px;
+  transition: 0.3s;
+}
+.testimonial:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.15);
+}
+.testimonial img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+.testimonial h4 {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.testimonial p {
+  font-size: 0.95rem;
+  color: #ddd;
+  margin: 0 auto;
+  max-width: 420px;
+}
