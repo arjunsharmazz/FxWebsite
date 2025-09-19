@@ -32,7 +32,7 @@ const Hero = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
       >
-        <button className={styles.primaryBtn}>Start Trading</button>
+        <button className={styles.primaryBtn} onClick={() => navigate("/signup")}>Start Trading</button>
         <button
           className={styles.secondaryBtn}
           onClick={() => navigate("/demo")}

@@ -18,7 +18,6 @@ const Footer = () => {
           <li><Link to="/education">Education</Link></li>
           <li><Link to="/news">News</Link></li>
           <li><Link to="/review">Review</Link></li>
-          <li><Link to="/review">Review</Link></li>
           <li><Link to="/socialmedia">SocialMedia</Link></li>
           <li><Link to="/blog">Blog</Link></li>
         </ul>

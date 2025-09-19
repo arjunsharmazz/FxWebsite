@@ -2,8 +2,10 @@ import React from "react";
 import styles from "./css/ProtectionSection.module.css";
 import { FaShieldAlt, FaLock, FaBalanceScale, FaTools } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export default function ProtectionSection() {
+  const navigate = useNavigate();
   const features = [
     {
       icon: <FaShieldAlt />,
@@ -139,6 +141,7 @@ export default function ProtectionSection() {
           <div className={styles.buttons}>
             <motion.button 
               className={`${styles.btn} ${styles.btnPrimary}`}
+              onClick={() => navigate("/signup")}
               whileHover={{ scale: 1.1, boxShadow: "0px 8px 25px rgba(255,0,0,0.6)" }}
               whileTap={{ scale: 0.95 }}
             >

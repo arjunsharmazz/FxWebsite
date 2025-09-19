@@ -2,8 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import styles from "./css/AboutSection.module.css";
 import manImage from "../assets/sopiha.png"; 
+import { useNavigate } from "react-router-dom";
 
 export default function AboutSection() {
+    const navigate = useNavigate();
   return (
     <section className={styles.aboutSection}>
       {/* Left Side */}
@@ -15,7 +17,7 @@ export default function AboutSection() {
         viewport={{ once: true, amount: 0.2 }}
       >
         <motion.div
-          className={styles.bgShape}
+          className={styles.bgShape} 
           animate={{ scale: [1, 1.05, 1] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -61,6 +63,7 @@ export default function AboutSection() {
 
         <motion.button
           className={styles.btn}
+          onClick={() => navigate("/about")}
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.95 }}
         >

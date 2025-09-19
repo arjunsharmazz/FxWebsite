@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaPhoneAlt, FaEnvelope, FaMobileAlt, FaCheck, FaIdCard } from "react-icons/fa";
 import "./css/StepsSection.css";
+import { useNavigate } from "react-router-dom";
 
 const stepVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -13,6 +14,7 @@ const stepVariants = {
 };
 
 export default function StepsSection() {
+  const navigate = useNavigate();
   const steps = [
     { icon: <FaPhoneAlt className="icon green" />, title: "Step 1", text: "Click 'Register' and enter email and password" },
     { icon: <FaEnvelope className="icon red" />, title: "Step 2", text: "Enter the verification code sent to your email" },
@@ -61,6 +63,7 @@ export default function StepsSection() {
             className="btn-register"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => navigate("/signup")}
           >
             Register
           </motion.button>

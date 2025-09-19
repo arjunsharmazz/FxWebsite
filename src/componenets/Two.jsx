@@ -2,8 +2,10 @@ import React from "react";
 import styles from "./css/Two.module.css";
 import twoImage from "../assets/two1.png";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export default function Two() {
+  const navigate = useNavigate();
   const imageVariant = {
     hidden: { opacity: 0, x: -80 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
@@ -24,7 +26,7 @@ export default function Two() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.4 }}
-          variants={imageVariant}
+          variants={imageVariant} 
         >
           <img src={twoImage} alt="Celebrating 2 Years" />
         </motion.div>
@@ -50,6 +52,7 @@ export default function Two() {
             <motion.button 
               className={styles.primary}
               whileHover={{ scale: 1.05 }}
+               onClick={() => navigate("/signup")}
               whileTap={{ scale: 0.95 }}
             >
              Start Trading

@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import styles from "./css/Login.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import img from "../assets/forex-trading-giving-up.png";
+
+// Icons
+import { FcGoogle } from "react-icons/fc";
+import { FaFacebook, FaLock, FaUser } from "react-icons/fa";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -25,12 +30,11 @@ export default function Login() {
       });
 
       const data = await res.json();
-      
+
       if (res.ok) {
-        // Token save
         localStorage.setItem("token", data.token);
-        login(); // AuthContext state update
-        navigate("/"); // redirect to home
+        login();
+        navigate("/");
       } else {
         setError(data.message || "Invalid credentials ❌");
       }
@@ -43,14 +47,34 @@ export default function Login() {
 
   return (
     <div className={styles.loginPage}>
+      <div className={styles.leftPane}>
+        <img src={img} alt="Trading illustration" />
+      </div>
+
       <div className={styles.card}>
         <h1>
           Welcome to <span className={styles.accent}>PayKuberFX</span>
         </h1>
         <p>Sign in to continue your trading journey.</p>
 
+        <div className={styles.socialLogin}>
+          <button className={styles.socialBtn}>
+            <FcGoogle size={20} />
+            Sign in with Google
+          </button>
+          <button className={styles.socialBtn} style={{ color: "#1877F2" }}>
+            <FaFacebook size={20} />
+            Sign in with Facebook
+          </button>
+        </div>
+
+        <div className={styles.divider}>
+          <span>or</span>
+        </div>
+
         <form className={styles.form} onSubmit={handleLogin}>
           <div className={styles.inputGroup}>
+            {/* <FaUser className={styles.inputIcon} /> */}
             <input
               type="email"
               placeholder="Enter your email"
@@ -60,6 +84,7 @@ export default function Login() {
             />
           </div>
           <div className={styles.inputGroup}>
+            {/* <FaLock className={styles.inputIcon} /> */}
             <input
               type="password"
               placeholder="Enter your password"
