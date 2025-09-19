@@ -172,3 +172,102 @@
   font-size: 0.75rem;
   color: #ff9b9b;
 }
+@media (max-width: 1024px) {
+  .heading {
+    font-size: 2.3rem;
+    margin-bottom: 45px;
+  }
+
+  .card img {
+    height: 180px;
+  }
+
+  .gridCard img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .blogWrapper {
+    padding: 60px 20px;
+  }
+
+  .heading {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .slider {
+    margin-bottom: 50px;
+  }
+
+  .card {
+    margin: 10px;
+  }
+  .card img {
+    height: 160px;
+  }
+  .cardBody h3 {
+    font-size: 1.05rem;
+  }
+  .cardBody p {
+    font-size: 0.85rem;
+  }
+
+  .grid {
+    gap: 20px;
+  }
+  .gridCard img {
+    height: 150px;
+  }
+  .gridContent h4 {
+    font-size: 1rem;
+  }
+  .gridContent p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .blogWrapper {
+    padding: 40px 15px;
+  }
+
+  .heading {
+    font-size: 1.7rem;
+    margin-bottom: 30px;
+  }
+
+  .card img {
+    height: 140px;
+  }
+  .cardBody {
+    padding: 14px;
+  }
+  .cardBody h3 {
+    font-size: 1rem;
+  }
+  .cardBody p {
+    font-size: 0.8rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* single column */
+    gap: 16px;
+  }
+  .gridCard img {
+    height: 130px;
+  }
+  .gridContent {
+    padding: 14px;
+  }
+  .gridContent h4 {
+    font-size: 0.95rem;
+  }
+  .gridContent p {
+    font-size: 0.8rem;
+  }
+  .meta {
+    font-size: 0.7rem;
+  }
+}
