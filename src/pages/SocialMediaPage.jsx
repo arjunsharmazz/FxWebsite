@@ -93,7 +93,7 @@ export default function SocialMediaPage() {
         </motion.div>
 
         <div className={styles.heroPhones}>
-          <img src={phone1} alt="Phone1" className={styles.phone1} />
+          {/* <img src={phone1} alt="Phone1" className={styles.phone1} /> */}
           <img src={phone2} alt="Phone2" className={styles.phone2} />
         </div>
       </section>

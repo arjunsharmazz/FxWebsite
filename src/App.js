@@ -21,6 +21,7 @@ import CurrencyChart from "./charts/CurrencyChart";
 import TradingPanel from "./charts/TradingPanel";
 import SocialMediaPage from "./pages/SocialMediaPage";
 import BlogInsights from "./pages/BlogInsights";
+import ForexAccountComparison from "./pages/ForexAccountComparison";
 
 
 function ScrollToTop() {
@@ -71,6 +72,7 @@ function App() {
               <Route path="/review" element={<Review />} />
               <Route path="/socialmedia" element={<SocialMediaPage />} />
               <Route path="/blog" element={<BlogInsights />} />
+              <Route path="/forexaccount" element={<ForexAccountComparison />} />
             </Route>
           </Routes>
         </AuthProvider>

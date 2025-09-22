@@ -1,0 +1,136 @@
+:root {
+  --accent: #ff3030;
+  --text: #ffffff;
+  --muted: #a8b3c1;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 3rem 30px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Increased spacing between cards */
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+}
+
+/* Card */
+.card {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2.4rem 2.5rem; /* Increased padding for more height */
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  cursor: default;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+}
+
+.card.active {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Icon */
+.icon {
+  font-size: 2.8rem;
+  flex-shrink: 0;
+  color: var(--accent);
+  line-height: 1;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  color: var(--text);
+}
+.content h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+.meta {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+.meta strong {
+  color: var(--accent);
+}
+.desc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  opacity: 0.95;
+  padding-top: 0.5rem;
+}
+
+/* Expand Button */
+.expandBtn {
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+    text-decoration: underline;
+  transition: color 0.3s ease;
+}
+.expandBtn:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Responsive Tablet */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .icon {
+    font-size: 2.4rem;
+  }
+
+  .content h3 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Responsive Mobile */
+@media (max-width: 576px) {
+  .container {
+    padding: 2rem;
+  }
+
+  .card {
+    padding: 1.6rem;
+  }
+
+  .content h3 {
+    font-size: 1.2rem;
+  }
+
+  .desc {
+    font-size: 0.95rem;
+  }
+}

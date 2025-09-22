@@ -20,6 +20,7 @@ const Footer = () => {
           <li><Link to="/review">Review</Link></li>
           <li><Link to="/socialmedia">SocialMedia</Link></li>
           <li><Link to="/blog">Blog</Link></li>
+          <li><Link to="/forexaccount">Account type</Link></li>
         </ul>
 
         <div className={styles.socials}>

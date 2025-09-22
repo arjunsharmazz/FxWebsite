@@ -252,7 +252,7 @@
   }
 
   .grid {
-    grid-template-columns: 1fr; /* single column */
+    grid-template-columns: 1fr; 
     gap: 16px;
   }
   .gridCard img {
