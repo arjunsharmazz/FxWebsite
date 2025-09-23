@@ -1,4 +1,4 @@
-// filepath: [MarketTicker.jsx](http://_vscodecontentref_/0)
+
 import React, { useEffect, useState } from "react";
 import styles from "./css/MarketTicker.module.css";
 
@@ -45,7 +45,7 @@ const MarketTicker = () => {
     };
 
     fetchPrices();
-    const interval = setInterval(fetchPrices, 15000); // update every 15s
+    const interval = setInterval(fetchPrices, 15000);
     return () => clearInterval(interval);
   }, []);
 

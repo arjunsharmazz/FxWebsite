@@ -82,21 +82,7 @@ const withdrawals = [
     description: "High-value withdrawals with RTGS settlement.",
     image: "https://play-lh.googleusercontent.com/IWU8HM1uQuW8wVrp6XpyOOJXvb_1tDPUDAOfkrl83RZPG9Ww3dCY9X1AV6T1atSvgXc=w240-h480-rw",
   },
-  {
-    title: "Crypto (BTC)",
-    description: "Withdraw funds directly to your Bitcoin wallet.",
-    image: "https://play-lh.googleusercontent.com/IWU8HM1uQuW8wVrp6XpyOOJXvb_1tDPUDAOfkrl83RZPG9Ww3dCY9X1AV6T1atSvgXc=w240-h480-rw",
-  },
-  {
-    title: "Crypto (ETH)",
-    description: "Withdraw Ethereum securely to your crypto wallet.",
-    image: "https://play-lh.googleusercontent.com/IWU8HM1uQuW8wVrp6XpyOOJXvb_1tDPUDAOfkrl83RZPG9Ww3dCY9X1AV6T1atSvgXc=w240-h480-rw",
-  },
-  {
-    title: "Crypto (USDT)",
-    description: "Withdraw instantly via Tether (USDT).",
-    image: "https://play-lh.googleusercontent.com/IWU8HM1uQuW8wVrp6XpyOOJXvb_1tDPUDAOfkrl83RZPG9Ww3dCY9X1AV6T1atSvgXc=w240-h480-rw",
-  },
+
   {
     title: "Wise (TransferWise)",
     description: "Withdraw internationally with low fees via Wise.",

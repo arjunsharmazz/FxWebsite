@@ -28,8 +28,8 @@ const Home = () => {
   return (
     <>
       <Hero />  
-      <MarketTicker />
       <AnytimeSection />
+      <MarketTicker />
       <KeyFeatures />
       <Two />
       <TradingPlatforms />

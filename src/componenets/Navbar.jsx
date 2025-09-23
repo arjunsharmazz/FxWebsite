@@ -148,7 +148,7 @@ export default function Navbar() {
               ) : (
                 <>
                   <Link to="/login">
-                    <button className={styles.loginBtn}>Login</button>
+                    <button style={{border:'2px solid white'}} className={styles.loginBtn}>Login</button>
                   </Link>
                   <Link to="/signup">
                     <button className={styles.startBtn}>Start Free Trial</button>
