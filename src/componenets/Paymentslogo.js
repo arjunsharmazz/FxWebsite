@@ -1,119 +1,121 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./css/Paymentslogo.module.css";
-
 const withdrawals = [
   {
     title: "Paykuber",
     description: "Withdraw funds using popular cryptocurrencies.",
-    image: "https://www.shutterstock.com/search/withdrawal-crypto",
+    image: "https://play-lh.googleusercontent.com/IWU8HM1uQuW8wVrp6XpyOOJXvb_1tDPUDAOfkrl83RZPG9Ww3dCY9X1AV6T1atSvgXc=w240-h480-rw",
   },
   {
     title: "UPI",
     description: "Fast and secure withdrawals directly to your UPI apps.",
-    image: "https://www.shutterstock.com/search/upi",
+    image: "https://play-lh.googleusercontent.com/IWU8HM1uQuW8wVrp6XpyOOJXvb_1tDPUDAOfkrl83RZPG9Ww3dCY9X1AV6T1atSvgXc=w240-h480-rw",
   },
   {
     title: "Bank Transfer",
     description: "Quick transfer to your local bank account.",
-    image: "https://www.shutterstock.com/search/bank-withdrawal",
+    image: "https://play-lh.googleusercontent.com/IWU8HM1uQuW8wVrp6XpyOOJXvb_1tDPUDAOfkrl83RZPG9Ww3dCY9X1AV6T1atSvgXc=w240-h480-rw",
   },
   {
     title: "Paytm",
     description: "Instant withdrawal with Paytm wallet support.",
-    image: "https://www.shutterstock.com/search/paytm-money-transfer",
+    image: "https://play-lh.googleusercontent.com/IWU8HM1uQuW8wVrp6XpyOOJXvb_1tDPUDAOfkrl83RZPG9Ww3dCY9X1AV6T1atSvgXc=w240-h480-rw",
   },
   {
     title: "Google Pay",
     description: "Withdraw instantly using Google Pay UPI.",
-    image: "https://www.shutterstock.com/search/google-pay",
+    image: "https://play-lh.googleusercontent.com/IWU8HM1uQuW8wVrp6XpyOOJXvb_1tDPUDAOfkrl83RZPG9Ww3dCY9X1AV6T1atSvgXc=w240-h480-rw",
   },
   {
     title: "PhonePe",
     description: "Seamless withdrawal via PhonePe UPI.",
-    image: "https://www.shutterstock.com/search/phone-withdrawal",
+    image: "https://play-lh.googleusercontent.com/IWU8HM1uQuW8wVrp6XpyOOJXvb_1tDPUDAOfkrl83RZPG9Ww3dCY9X1AV6T1atSvgXc=w240-h480-rw",
   },
   {
     title: "Amazon Pay",
     description: "Withdraw funds directly to Amazon Pay wallet.",
-    image: "https://www.shutterstock.com/search/amazon-pay",
+    image: "https://play-lh.googleusercontent.com/IWU8HM1uQuW8wVrp6XpyOOJXvb_1tDPUDAOfkrl83RZPG9Ww3dCY9X1AV6T1atSvgXc=w240-h480-rw",
   },
   {
     title: "Skrill",
     description: "Trusted e-wallet withdrawals worldwide.",
-    image: "https://www.shutterstock.com/search/crypto-withdraw",
+    image: "https://play-lh.googleusercontent.com/IWU8HM1uQuW8wVrp6XpyOOJXvb_1tDPUDAOfkrl83RZPG9Ww3dCY9X1AV6T1atSvgXc=w240-h480-rw",
   },
   {
     title: "Neteller",
     description: "Instant global withdrawals to your Neteller wallet.",
-    image: "https://www.shutterstock.com/search/crypto-withdraw",
+    image: "https://play-lh.googleusercontent.com/IWU8HM1uQuW8wVrp6XpyOOJXvb_1tDPUDAOfkrl83RZPG9Ww3dCY9X1AV6T1atSvgXc=w240-h480-rw",
   },
   {
     title: "PayPal",
     description: "Fast international withdrawals via PayPal.",
-    image: "https://www.shutterstock.com/search/crypto-withdraw",
+    image: "https://play-lh.googleusercontent.com/IWU8HM1uQuW8wVrp6XpyOOJXvb_1tDPUDAOfkrl83RZPG9Ww3dCY9X1AV6T1atSvgXc=w240-h480-rw",
   },
   {
     title: "Visa",
     description: "Withdraw funds directly to your Visa debit/credit card.",
-    image: "https://www.shutterstock.com/search/cash-withdrawal",
+    image: "https://play-lh.googleusercontent.com/IWU8HM1uQuW8wVrp6XpyOOJXvb_1tDPUDAOfkrl83RZPG9Ww3dCY9X1AV6T1atSvgXc=w240-h480-rw",
   },
   {
     title: "Mastercard",
     description: "Quick withdrawals supported on Mastercard cards.",
-    image: "https://www.shutterstock.com/search/cash-withdrawal",
+    image: "https://play-lh.googleusercontent.com/IWU8HM1uQuW8wVrp6XpyOOJXvb_1tDPUDAOfkrl83RZPG9Ww3dCY9X1AV6T1atSvgXc=w240-h480-rw",
   },
   {
     title: "RuPay",
     description: "Domestic withdrawals via RuPay cards in India.",
-    image: "https://www.shutterstock.com/search/cash-withdrawal",
+    image: "https://play-lh.googleusercontent.com/IWU8HM1uQuW8wVrp6XpyOOJXvb_1tDPUDAOfkrl83RZPG9Ww3dCY9X1AV6T1atSvgXc=w240-h480-rw",
   },
   {
     title: "IMPS",
     description: "Instant bank withdrawals using IMPS service.",
-    image: "https://www.shutterstock.com/search/cash-withdrawal",
+    image: "https://play-lh.googleusercontent.com/IWU8HM1uQuW8wVrp6XpyOOJXvb_1tDPUDAOfkrl83RZPG9Ww3dCY9X1AV6T1atSvgXc=w240-h480-rw",
   },
   {
     title: "NEFT",
     description: "Standard withdrawals via NEFT bank transfer.",
-    image: "https://www.shutterstock.com/search/cash-withdrawal",
+    image: "https://play-lh.googleusercontent.com/IWU8HM1uQuW8wVrp6XpyOOJXvb_1tDPUDAOfkrl83RZPG9Ww3dCY9X1AV6T1atSvgXc=w240-h480-rw",
   },
   {
     title: "RTGS",
     description: "High-value withdrawals with RTGS settlement.",
-    image: "https://www.shutterstock.com/search/cash-withdrawal",
+    image: "https://play-lh.googleusercontent.com/IWU8HM1uQuW8wVrp6XpyOOJXvb_1tDPUDAOfkrl83RZPG9Ww3dCY9X1AV6T1atSvgXc=w240-h480-rw",
   },
   {
     title: "Crypto (BTC)",
     description: "Withdraw funds directly to your Bitcoin wallet.",
-    image: "https://www.shutterstock.com/search/crypto-withdraw",
+    image: "https://play-lh.googleusercontent.com/IWU8HM1uQuW8wVrp6XpyOOJXvb_1tDPUDAOfkrl83RZPG9Ww3dCY9X1AV6T1atSvgXc=w240-h480-rw",
   },
   {
     title: "Crypto (ETH)",
     description: "Withdraw Ethereum securely to your crypto wallet.",
-    image: "https://www.shutterstock.com/search/crypto-withdraw",
+    image: "https://play-lh.googleusercontent.com/IWU8HM1uQuW8wVrp6XpyOOJXvb_1tDPUDAOfkrl83RZPG9Ww3dCY9X1AV6T1atSvgXc=w240-h480-rw",
   },
   {
     title: "Crypto (USDT)",
     description: "Withdraw instantly via Tether (USDT).",
-    image: "https://www.shutterstock.com/search/crypto-withdraw",
+    image: "https://play-lh.googleusercontent.com/IWU8HM1uQuW8wVrp6XpyOOJXvb_1tDPUDAOfkrl83RZPG9Ww3dCY9X1AV6T1atSvgXc=w240-h480-rw",
   },
   {
     title: "Wise (TransferWise)",
     description: "Withdraw internationally with low fees via Wise.",
-    image: "https://www.shutterstock.com/search/cash-withdrawal",
+    image: "https://play-lh.googleusercontent.com/IWU8HM1uQuW8wVrp6XpyOOJXvb_1tDPUDAOfkrl83RZPG9Ww3dCY9X1AV6T1atSvgXc=w240-h480-rw",
   },
   {
     title: "Revolut",
     description: "Instant withdrawals for Revolut account holders.",
-    image: "https://www.shutterstock.com/search/cash-withdrawal",
+    image: "https://play-lh.googleusercontent.com/IWU8HM1uQuW8wVrp6XpyOOJXvb_1tDPUDAOfkrl83RZPG9Ww3dCY9X1AV6T1atSvgXc=w240-h480-rw",
   },
   {
     title: "Cashfree",
     description: "Trusted Indian gateway for instant withdrawals.",
-    image: "https://www.shutterstock.com/search/cash-withdrawal",
+    image: "https://play-lh.googleusercontent.com/IWU8HM1uQuW8wVrp6XpyOOJXvb_1tDPUDAOfkrl83RZPG9Ww3dCY9X1AV6T1atSvgXc=w240-h480-rw",
   },
 ];
+
+
+
 
 const Collections = () => {
   const [showAll, setShowAll] = useState(false);

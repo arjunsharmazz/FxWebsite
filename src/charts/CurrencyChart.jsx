@@ -14,6 +14,7 @@ import Education2 from "../animcomponents/Education2";
 import News from "../pages/News";
 import NewsletterSection from "../componenets/NewsletterSection";
 import CTABanner from "../componenets/CTABanner";
+import Loading from "../animcomponents/Loading";
 
 const CurrencyChart = () => {
   const [data, setData] = useState([]);
@@ -59,7 +60,7 @@ const CurrencyChart = () => {
     fetchData();
   }, [range]);
 
-  if (loading) return <p className={styles.loading}>Loading...</p>;
+  if (loading) return <Loading/>;
 
   return (
     <>
