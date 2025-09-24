@@ -22,6 +22,7 @@ import TradingPanel from "./charts/TradingPanel";
 import SocialMediaPage from "./pages/SocialMediaPage";
 import BlogInsights from "./pages/BlogInsights";
 import ForexAccountComparison from "./pages/ForexAccountComparison";
+import ForexAccountComparePanel from "./pages/ForexAccountComparePanel";
 
 
 function ScrollToTop() {
@@ -73,6 +74,7 @@ function App() {
               <Route path="/socialmedia" element={<SocialMediaPage />} />
               <Route path="/blog" element={<BlogInsights />} />
               <Route path="/forexaccount" element={<ForexAccountComparison />} />
+              <Route path="/compare" element={<ForexAccountComparePanel />} />
             </Route>
           </Routes>
         </AuthProvider>
