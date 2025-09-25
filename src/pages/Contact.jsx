@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
 import styles from "./css/Contact.module.css";
 import { Mail, Phone, MapPin } from "lucide-react";
+import Education2 from "../animcomponents/Education2";
 // import img from ""; // 👉 apni image yaha dalna
 
 export default function Contact() {
   return (
+    <>
+    <Education2 name = "Contact Us"/>
     <div className={styles.contactPage}>
       {/* Left Side Image */}
       <motion.div
@@ -25,7 +28,7 @@ export default function Contact() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1>Contact <span className={styles.accent}>PayKuberFX</span></h1>
+          <h1><span className={styles.accent}>PayKuberFX</span></h1>
           <p>We’re here to help you 24/7 — connect with us anytime.</p>
         </motion.div>
 
@@ -62,5 +65,6 @@ export default function Contact() {
         </motion.div>
       </div>
     </div>
+    </>
   );
 }

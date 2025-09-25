@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./css/Paymentslogo.module.css";
+import Education2 from "../animcomponents/Education2";
 const withdrawals = [
   {
     title: "Paykuber",
@@ -111,7 +112,8 @@ const Collections = () => {
   return (
     <div className={styles.pageWrap}>
       <section className={styles.postSliders}>
-        <h2 className={styles.sectionHeading}>Withdrawal</h2>
+        {/* <h2 className={styles.sectionHeading}>Withdrawal</h2> */}
+        <Education2 name= "Withdrawal"/>
 
         <div className={styles.postSlider}>
           <div className={`${styles.postSliderHeader} ${styles.headerCard}`}>

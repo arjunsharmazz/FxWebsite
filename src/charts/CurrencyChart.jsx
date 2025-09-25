@@ -15,6 +15,9 @@ import News from "../pages/News";
 import NewsletterSection from "../componenets/NewsletterSection";
 import CTABanner from "../componenets/CTABanner";
 import Loading from "../animcomponents/Loading";
+import AnytimeSection from "../componenets/AnytimeSection";
+import TradeSection from "../componenets/TradeSection";
+import FaqSection from "../componenets/FaqSection";
 
 const CurrencyChart = () => {
   const [data, setData] = useState([]);
@@ -130,7 +133,9 @@ const CurrencyChart = () => {
       </div>
     </div>
     <CurrencyHeatmap />
-    <News/>
+    <AnytimeSection />
+    <TradeSection />
+    <FaqSection />
     <NewsletterSection />
     <CTABanner />
     </>

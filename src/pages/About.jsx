@@ -6,6 +6,7 @@ import img from "../assets/dash.png";
 import img2 from "../assets/dash2.png";
 import FaqSection from "../componenets/FaqSection";
 import TradeSection from "../componenets/TradeSection";
+import Education2 from "../animcomponents/Education2";
 
 const fadeUp = (d = 0) => ({
   initial: { opacity: 0, y: 32 },
@@ -64,10 +65,10 @@ export default function About() {
           <img src={img2} alt="Platform preview" />
         </motion.div>
       </section>
-
+      <Education2 name= "Our mission"/>
       <section className={styles.mission}>
         <motion.div {...fadeUp(0)} className={styles.missionCard}>
-          <h3>Our mission</h3>
+          {/* <h3>Our mission</h3> */}
           <p>
             Make trading feel simple, safe, and data-driven—without hiding the details. We give you the
             knowledge, tools, and support to reach your goals with confidence.

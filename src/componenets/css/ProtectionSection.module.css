@@ -36,15 +36,16 @@
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.05); /* halkasa transparent white */
+  background: rgb(207, 8, 8); 
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 18px;
   padding: 25px;
+  color: #fff ;
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease, background 0.3s ease;
 
   /* glassmorphism look */
-  backdrop-filter: blur(12px);
+  /* backdrop-filter: blur(12px); */
   -webkit-backdrop-filter: blur(12px);
 
   /* subtle gradient for depth */
@@ -53,6 +54,9 @@
     rgba(255, 255, 255, 0.08),
     rgba(0, 0, 0, 0.3)
   );
+  >h3{
+    color: red;
+  }
 }
 
 .card:hover {

@@ -63,7 +63,7 @@ const Marquee3D = () => {
 
   return (
     <>
-    <Education2 name="What People Are Saying" />
+    <Education2 name="Client Stories" />
     <div className={styles.wrapper}>
       <div className={styles.inner3d}>
         <MarqueeColumn data={firstRow} />

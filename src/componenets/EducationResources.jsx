@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import styles from "./css/EducationResources.module.css";
 import img1 from "../assets/sopiha.png";
 import img2 from "../assets/arjun.png";
+import Education2 from "../animcomponents/Education2";
 
 const data = [
   {
@@ -67,7 +68,8 @@ export default function EducationResources() {
 
   return (
     <section className={styles.carouselSection}>
-      <h2 className={styles.heading}>What Our Traders Say</h2>
+      {/* <h2 className={styles.heading}>What Our Traders Say</h2> */}
+      <Education2 name="Testimonials"/>
 
       <div className={styles.carouselContainer}>
         {/*Mobile*/}

@@ -4,6 +4,7 @@ import styles from "./css/NetworkSection.module.css";
 import one from "../assets/one.png";
 import two from "../assets/two.png";
 import three from "../assets/three.png";
+import Education2 from "../animcomponents/Education2";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40, scale: 0.8 },
@@ -21,10 +22,11 @@ export default function NetworkSection() {
         viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUp}
       >
-        <h2 className={styles.title}>Global Forex Network</h2>
-        <p className={styles.subtitle}>
+        {/* <h2 className={styles.title}>Global Forex Network</h2> */}
+        <Education2 name="Forex Network"/>
+        {/* <p className={styles.subtitle}>
           Track real-time transactions and connections across the world.
-        </p>
+        </p> */}
       </motion.div>
 
       {/* Wrapper */}

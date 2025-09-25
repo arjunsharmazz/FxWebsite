@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import styles from "./css/MarketTicker.module.css";
+import Education2 from "../animcomponents/Education2";
 
 const MarketTicker = () => {
   const [data, setData] = useState([]);
@@ -51,8 +52,7 @@ const MarketTicker = () => {
 
   return (
     <section className={styles.tickerSection}>
-      <h2 className={styles.heading}> Ahead of the Forex Market</h2>
-      <p className={styles.subtext}>Live updates on top Forex pairs.</p>
+     <Education2 name="Forex Market"/>
       <div className={styles.tickerWrapper}>
         <div className={styles.ticker}>
           {data.map((item, idx) => (

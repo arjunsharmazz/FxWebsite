@@ -7,6 +7,7 @@ import img from "../assets/forex-trading-giving-up.png";
 // Icons
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook, FaLock, FaUser } from "react-icons/fa";
+import Education2 from "../animcomponents/Education2";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -46,6 +47,8 @@ export default function Login() {
   };
 
   return (
+    <>
+    <Education2 name = "Login"/>
     <div className={styles.loginPage}>
       <div className={styles.leftPane}>
         <img src={img} alt="Trading illustration" />
@@ -109,5 +112,6 @@ export default function Login() {
         </form>
       </div>
     </div>
+    </>
   );
 }
