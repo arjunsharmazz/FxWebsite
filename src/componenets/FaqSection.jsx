@@ -66,14 +66,14 @@ const FaqSection = () => {
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.2 }}
     >
-      <motion.h2
+      <motion.h1
         className={styles.heading}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         Frequently Asked Questions
-      </motion.h2>
+      </motion.h1>
 
       <div className={styles.faqList}>
         {faqs.map((faq, index) => (

@@ -1,11 +1,12 @@
-
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import styles from "./css/MarketTicker.module.css";
 import Education2 from "../animcomponents/Education2";
+import { useNavigate } from "react-router-dom";
+import LiveConverter from "../animcomponents/LiveConverter";
 
 const MarketTicker = () => {
   const [data, setData] = useState([]);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const symbols = ["EUR/USD", "GBP/USD", "USD/JPY", "AUD/USD", "USD/CHF"];
 
@@ -50,9 +51,14 @@ const MarketTicker = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const handleLiveDataClick = () => {
+   navigate('liveforex2')
+  };
+
   return (
     <section className={styles.tickerSection}>
-     <Education2 name="Forex Market"/>
+      <Education2 name="Forex Market" />
+
       <div className={styles.tickerWrapper}>
         <div className={styles.ticker}>
           {data.map((item, idx) => (
@@ -60,26 +66,36 @@ const MarketTicker = () => {
               <span className={styles.pair}>{item.pair}</span>
               <span className={styles.price}>${item.price}</span>
               <span
-                className={`${styles.change} ${item.change.startsWith("-") ? styles.negative : styles.positive
-                  }`}
+                className={`${styles.change} ${
+                  item.change.startsWith("-") ? styles.negative : styles.positive
+                }`}
               >
                 {item.change}
               </span>
             </div>
           ))}
+
           {data.map((item, idx) => (
             <div key={`dup-${idx}`} className={styles.tickerItem}>
               <span className={styles.pair}>{item.pair}</span>
               <span className={styles.price}>${item.price}</span>
               <span
-                className={`${styles.change} ${item.change.startsWith("-") ? styles.negative : styles.positive
-                  }`}
+                className={`${styles.change} ${
+                  item.change.startsWith("-") ? styles.negative : styles.positive
+                }`}
               >
                 {item.change}
               </span>
             </div>
           ))}
         </div>
+      </div>
+               <LiveConverter />
+  
+      <div className={styles.btnWrap}>
+        <button className={styles.liveBtn} onClick={handleLiveDataClick}>
+          View Live Data
+        </button>
       </div>
     </section>
   );

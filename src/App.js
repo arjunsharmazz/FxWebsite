@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { FaComments } from "react-icons/fa";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -13,7 +14,7 @@ import LiveForex from "./pages/LiveForex";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Term from "./pages/Term";
 import DemoTrade from "./pages/DemoTrade";
-import OfferOverlay from "./componenets/OfferOverlay"; 
+import OfferOverlay from "./componenets/OfferOverlay";
 import { AuthProvider } from "./context/AuthContext";
 import Education from "./pages/Education";
 import Review from "./pages/Review";
@@ -24,37 +25,27 @@ import BlogInsights from "./pages/BlogInsights";
 import ForexAccountComparison from "./pages/ForexAccountComparison";
 import ForexAccountComparePanel from "./pages/ForexAccountComparePanel";
 
+import ChatOverlay from "./animcomponents/ChatOverlay.jsx";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
-
   useEffect(() => {
-
-    document.documentElement.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth", 
-    });
-
-  
-    document.body.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
+    document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
+    document.body.scrollTo({ top: 0, behavior: "smooth" });
   }, [pathname]);
-
   return null;
 }
 
-
 function App() {
+  const [chatOpen, setChatOpen] = useState(false);
+
   return (
     <div className="App">
       <BrowserRouter>
         <AuthProvider>
           <OfferOverlay />
-          <ScrollToTop />  
+          <ScrollToTop />
+
           <Routes>
             <Route path="/" element={<MainLayout />}>
               <Route index element={<Home />} />
@@ -77,10 +68,47 @@ function App() {
               <Route path="/compare" element={<ForexAccountComparePanel />} />
             </Route>
           </Routes>
+
+          {!chatOpen && (
+            <button style={styles.chatButton} onClick={() => setChatOpen(true)}>
+              <FaComments />
+            </button>
+          )}
+
+
+          {chatOpen && <ChatOverlay onClose={() => setChatOpen(false)} />}
         </AuthProvider>
       </BrowserRouter>
+
+      <style>{`
+        @keyframes slideIn {
+          from { transform: translateX(100%); }
+          to { transform: translateX(0); }
+        }
+      `}</style>
     </div>
   );
 }
+
+const styles = {
+  chatButton: {
+    position: "fixed",
+    bottom: "20px",
+    right: "20px",
+    width: "60px",
+    height: "60px",
+    borderRadius: "50%",
+    backgroundColor: "#e90e0e",
+    color: "white",
+    border: "none",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "24px",
+    cursor: "pointer",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+    zIndex: 9999,
+  },
+};
 
 export default App;

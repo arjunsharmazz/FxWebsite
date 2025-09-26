@@ -1,0 +1,152 @@
+.container {
+  width: 100%;
+  max-width: 420px;
+  height: 560px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #2c2c2c;
+  border-radius: 12px;
+  overflow: hidden;
+  /* background: #1e1e1e; dark background */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  color: #e5e5e5;
+}
+
+.header {
+  padding: 14px 16px;
+  border-bottom: 1px solid #2c2c2c;
+  display: flex;
+  flex-direction: column;
+  background: #2a2a2a;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.status {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-top: 2px;
+}
+
+.messageList {
+  flex: 1 1 auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  background: linear-gradient(180deg, rgba(30,30,30,0.9), rgba(20,20,20,1));
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+}
+
+.agent {
+  align-self: flex-start;
+}
+
+.client {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+.bubble {
+  background: #2c2c2c;
+  border: 1px solid #3a3a3a;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #f1f1f1;
+  line-height: 1.3;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
+.client .bubble {
+  background: #e11d48; /* 🔴 red accent for client */
+  color: #fff;
+  border-color: transparent;
+}
+
+.msgTime {
+  margin-top: 6px;
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.inputRow {
+  padding: 12px;
+  border-top: 1px solid #2c2c2c;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background: #2a2a2a;
+}
+
+.textarea {
+  flex: 1 1 auto;
+  resize: none;
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #3a3a3a;
+  min-height: 40px;
+  background: #1e1e1e;
+  color: #fff;
+}
+
+.textarea::placeholder {
+  color: #9ca3af;
+}
+
+.sendBtn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #e11d48; /* 🔴 red accent */
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.sendBtn:hover {
+  background: #be123c;
+}
+
+.typingDots {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.typingDots span {
+  width: 6px;
+  height: 6px;
+  background: #9ca3af;
+  border-radius: 9999px;
+  display: inline-block;
+  opacity: 0.4;
+  animation: blink 1.2s infinite;
+}
+
+.typingDots span:nth-child(2) { animation-delay: 0.15s }
+.typingDots span:nth-child(3) { animation-delay: 0.3s }
+
+@keyframes blink {
+  0% { transform: translateY(0); opacity: 0.3 }
+  50% { transform: translateY(-4px); opacity: 1 }
+  100% { transform: translateY(0); opacity: 0.3 }
+}
+
+/* Notes:
+- Dark mode background
+- Red accent for client messages + send button
+- Agent bubbles neutral gray
+*/

@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { createChart } from "lightweight-charts";
 import styles from "./TradingPanel.module.css";
+import Education2 from "../animcomponents/Education2";
+import LiveConverter from "../animcomponents/LiveConverter";
 
 const PAIR = { base: "EUR", quote: "USD" };
 const POLL_INTERVAL_MS = 5000;
@@ -231,9 +233,11 @@ export default function TradingPanel() {
   };
 
   return (
+    <>
+    <Education2 name ="Demo Desk"/>
     <div className={styles.wrapper}>
       <div className={styles.sidebar}>
-        <div className={styles.logo}>PFX</div>
+        <div className={styles.logo}>FX</div>
         <nav className={styles.menu}>
           <div className={styles.menuItem}>Trades</div>
           <div className={styles.menuItem}>Market</div>
@@ -353,5 +357,7 @@ export default function TradingPanel() {
         </div>
       </div>
     </div>
+        <LiveConverter />
+    </>
   );
 }

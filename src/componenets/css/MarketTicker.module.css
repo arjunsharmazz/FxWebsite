@@ -1,9 +1,13 @@
 .tickerSection {
   padding: 3rem 2rem;
   text-align: center;
-  /* background: #0d0d0d; */
   color: #ffffff;
   overflow: hidden;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);     
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;             
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
 .heading {
@@ -25,7 +29,7 @@
   width: 100%;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    /* transform: rotate(5deg);  */
+  background: rgba(0, 0, 0, 0.4);  
 }
 
 .ticker {
@@ -51,6 +55,7 @@
   font-size: 1rem;
   border-right: 1px solid rgba(255, 255, 255, 0.08);
   white-space: nowrap;
+  background: rgba(255, 255, 255, 0.03); 
 }
 
 .pair {
@@ -72,4 +77,26 @@
 
 .negative {
   color: #ef4444;
+}
+.btnWrap {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.liveBtn {
+  background: linear-gradient(90deg, #ff7a18, #af002d, #a5314e);
+  color: #fff;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.liveBtn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
 }

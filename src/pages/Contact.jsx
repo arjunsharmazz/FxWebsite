@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import styles from "./css/Contact.module.css";
 import { Mail, Phone, MapPin } from "lucide-react";
 import Education2 from "../animcomponents/Education2";
-// import img from ""; // 👉 apni image yaha dalna
+import SupportSection from "../animcomponents/SupportSection";
+// import img from ""; 
 
 export default function Contact() {
   return (
@@ -65,6 +66,7 @@ export default function Contact() {
         </motion.div>
       </div>
     </div>
+    <SupportSection/>
     </>
   );
 }

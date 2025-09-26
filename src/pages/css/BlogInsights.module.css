@@ -1,73 +1,149 @@
-/* ----------------------------- Module CSS ----------------------------- */
-
-/* File: BlogInsights.module.css */
-
 :root {
-  --bg-1: #07070a;
-  --glass: rgba(255, 255, 255, 0.04);
-  --muted: rgba(255, 255, 255, 0.72);
-  --accent-a: #ff0844;
-  --accent-b: #ff2e63;
+  --bg: #0b0f13;
+  --surface: rgba(255, 255, 255, .03);
+  --glass: rgba(255, 255, 255, .06);
+  --muted: #9fb0c3;
+  --text: #eaf2f7;
+  --heading: #ffffff;
+  --accent: #ff2e63;
+  --accent-2: #9b5cff;
+  --cardBorder: rgba(255, 255, 255, .08);
+  --shadow: 0 18px 60px rgba(2, 6, 23, .6);
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --blur: 16px;
 }
 
 .blogWrapper {
-  min-height: 100vh;
-  padding: 72px 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 36px;
-  align-items: center;
-  /* background: radial-gradient(1200px 600px at 10% 10%, rgba(255, 14, 82, 0.04), transparent 8%), radial-gradient(900px 500px at 90% 90%, rgba(0, 255, 255, 0.03), transparent 8%), var(--bg-1); */
   position: relative;
-  overflow: hidden;
-  color: white;
+  padding: clamp(18px, 5vw, 40px);
+  max-width: 1200px;
+  margin: 0 auto;
+  color: var(--text);
 }
 
-.bgSvg {
+.bgFx {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
+  inset: -10% -10% auto -10%;
+  height: 320px;
+  z-index: -1;
   pointer-events: none;
+  background:
+    radial-gradient(800px 400px at 10% -10%, rgba(255, 255, 255, .04), transparent 40%),
+    radial-gradient(600px 260px at 95% 0%, rgba(155, 92, 255, .12), transparent 55%),
+    radial-gradient(600px 260px at 5% 0%, rgba(255, 46, 99, .12), transparent 55%);
+  filter: saturate(110%) blur(0.2px);
+}
+
+.header {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 14px
 }
 
 .heading {
-  font-size: 2.6rem;
-  font-weight: 800;
-  letter-spacing: 0.6px;
-  z-index: 2;
-  text-align: center;
-  background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: .3px;
+  line-height: 1.15;
+  font-size: clamp(22px, 3.4vw, 36px);
+  background: linear-gradient(90deg, var(--heading), #cfe7ff 60%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin: 0;
+}
+
+.heading span {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sub {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: clamp(12px, 1.4vw, 14px)
 }
 
 .sliderWrap {
-  width: min(1200px, 100%);
-  z-index: 2;
+  position: relative;
+  margin-top: 14px;
 }
 
-.slider {
-  width: 100%;
+/* Slick arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid var(--cardBorder);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  background: rgba(14, 18, 24, .6);
+  color: #fff;
+  font-weight: 900;
+  font-size: 16px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .45);
+  transition: transform .16s ease, box-shadow .16s ease, background .16s ease, border-color .16s ease, opacity .16s ease;
+  backdrop-filter: blur(10px)
+}
+
+.arrow:hover {
+  transform: translateY(-50%) scale(1.04);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, .55);
+  border-color: rgba(255, 255, 255, .18)
+}
+
+.prev {
+  left: -6px
+}
+
+.next {
+  right: -6px
+}
+
+/* Slick dots */
+.dots {
+  display: flex !important;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 0 0;
+  margin: 0
+}
+
+.dots li {
+  list-style: none
+}
+
+.dot {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .22);
+  transition: transform .16s, background .16s
+}
+
+.dots li.slick-active .dot {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transform: scale(1.1)
 }
 
 .card {
-  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .02), rgba(255, 255, 255, .01));
+  border: 1px solid var(--cardBorder);
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.02));
-  box-shadow: 0 12px 40px rgba(2, 6, 23, 0.6);
-  margin: 12px;
-  display: flex;
-  flex-direction: column;
-  transition: transform .25s ease, box-shadow .25s ease;
-  position: relative;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, .45);
 }
 
 .imageWrapper {
   position: relative;
-  height: 240px;
+  aspect-ratio: 16/9;
+  overflow: hidden;
 }
 
 .imageWrapper img {
@@ -75,250 +151,211 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transform: scale(1.04);
 }
 
-.gloss {
+.imageOverlay {
   position: absolute;
   inset: 0;
-  pointer-events: none;
-  background: linear-gradient(120deg, rgba(255, 255, 255, 0.03), transparent 30%);
+  background: linear-gradient(180deg, rgba(10, 12, 16, 0) 30%, rgba(10, 12, 16, .8) 100%);
 }
 
 .tag {
   position: absolute;
-  left: 14px;
-  bottom: 14px;
-  background: linear-gradient(90deg, rgba(255, 8, 68, 0.95), rgba(255, 46, 99, 0.95));
-  color: white;
-  padding: 6px 12px;
+  top: 12px;
+  left: 12px;
+  padding: 6px 10px;
   border-radius: 999px;
+  font-size: 12px;
   font-weight: 700;
-  font-size: 0.75rem;
-  z-index: 3;
-  box-shadow: 0 6px 18px rgba(255, 46, 99, 0.12);
+  letter-spacing: .2px;
+  color: #fff;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  box-shadow: 0 8px 22px rgba(255, 46, 99, .2);
 }
 
 .cardBody {
-  padding: 18px 18px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  padding: 14px
 }
 
-.title {
-  font-size: 1.15rem;
-  margin: 0;
-  color: white;
+.cardTitle {
+  margin: 0 0 6px 0;
+  color: #fff;
+  font-size: clamp(16px, 2vw, 18px);
+  font-weight: 800;
+  line-height: 1.25
 }
 
 .desc {
   margin: 0;
-  color: #d7d7d7;
-  font-size: 0.95rem;
-  line-height: 1.45;
+  color: #cfd8e3;
+  font-size: 14px;
+  line-height: 1.5
 }
 
 .metaRow {
+  margin-top: 12px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-top: 8px;
+  justify-content: space-between;
+  gap: 10px
 }
 
 .author {
-  color: #ffbaba;
-  font-size: 0.85rem;
+  color: var(--muted);
+  font-size: 13px
 }
 
 .readBtn {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 8px 12px;
-  border-radius: 10px;
-  color: var(--muted);
+  padding: 10px 14px;
+  border: none;
   cursor: pointer;
-  backdrop-filter: blur(6px);
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #fff;
+  font-weight: 800;
+  box-shadow: 0 12px 30px rgba(155, 92, 255, .18);
+  transition: transform .16s ease, box-shadow .16s ease, opacity .16s ease
 }
 
 .readBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 16px 40px rgba(155, 92, 255, .22)
 }
 
-/* Grid */
+/* Grid list */
 .grid {
-  width: min(1200px, 100%);
+  margin-top: 18px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 22px;
-  z-index: 2;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
 }
 
 .gridCard {
+  grid-column: span 4;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .02), rgba(255, 255, 255, .01));
+  border: 1px solid var(--cardBorder);
   border-radius: 14px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
-  box-shadow: 0 10px 28px rgba(3, 8, 18, 0.6);
-  transition: transform .22s ease, box-shadow .22s ease;
+  box-shadow: 0 10px 34px rgba(0, 0, 0, .45);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease
 }
 
 .gridCard:hover {
-  transform: translateY(-8px);
+  box-shadow: 0 14px 46px rgba(0, 0, 0, .55);
+  border-color: rgba(255, 255, 255, .16)
 }
 
 .gridImage {
   position: relative;
-  height: 160px;
+  aspect-ratio: 16/9;
+  overflow: hidden
 }
 
 .gridImage img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  display: block
+}
+
+.gridOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 12, 16, 0) 20%, rgba(10, 12, 16, .85) 100%)
 }
 
 .gridTag {
   position: absolute;
-  left: 12px;
   top: 12px;
-  background: rgba(0, 0, 0, 0.4);
+  left: 12px;
   padding: 6px 10px;
-  border-radius: 8px;
-  font-size: 0.75rem;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
   color: #fff;
-  backdrop-filter: blur(6px);
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  box-shadow: 0 8px 22px rgba(255, 46, 99, .2)
 }
 
 .gridContent {
-  padding: 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  padding: 12px 14px 14px
 }
 
-.gridContent h4 {
-  margin: 0;
-  font-size: 1rem;
-  color: white;
+.gridTitle {
+  margin: 0 0 6px 0;
+  font-size: clamp(15px, 1.8vw, 17px);
+  color: #fff;
+  font-weight: 800
 }
 
-.gridContent p {
+.gridDesc {
   margin: 0;
-  color: #cfcfcf;
-  font-size: 0.9rem;
-  line-height: 1.4;
+  color: #cfd8e3;
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 42px
 }
 
 .gridFooter {
+  margin-top: 12px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-top: 8px;
-  color: #ffbaba;
+  justify-content: space-between
+}
+
+.gridAuthor {
+  color: var(--muted);
+  font-size: 13px
 }
 
 .cta {
-  background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
-  border: none;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 8px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, .14);
+  background: rgba(255, 255, 255, .02);
+  color: #fff;
+  border-radius: 10px;
   cursor: pointer;
+  transition: background .16s ease, border-color .16s ease, transform .16s ease
 }
 
-/* Neon outline for big screens */
-@media(min-width:1000px) {
-  .blogWrapper::before {
-    content: "";
-    position: absolute;
-    width: 520px;
-    height: 520px;
-    border-radius: 50%;
-    top: -160px;
-    left: -160px;
-    background: linear-gradient(180deg, var(--accent-a), transparent);
-    filter: blur(120px);
-    opacity: 0.18;
-    z-index: 0;
-  }
+.cta:hover {
+  background: rgba(255, 255, 255, .06);
+  border-color: rgba(255, 255, 255, .24);
+  transform: translateY(-2px)
+}
 
-  .blogWrapper::after {
-    content: "";
-    position: absolute;
-    width: 420px;
-    height: 420px;
-    border-radius: 50%;
-    bottom: -120px;
-    right: -120px;
-    background: linear-gradient(180deg, transparent, var(--accent-b));
-    filter: blur(120px);
-    opacity: 0.14;
-    z-index: 0;
+/* Responsive grid */
+@media (max-width: 1200px) {
+  .gridCard {
+    grid-column: span 6
   }
 }
 
-/* Responsiveness */
-@media(max-width:900px) {
-  .heading {
-    font-size: 2rem;
+@media (max-width: 820px) {
+  .prev {
+    left: -2px
   }
 
-  .imageWrapper {
-    height: 200px;
-  }
-}
-
-@media(max-width:600px) {
-  .blogWrapper {
-    padding: 40px 16px;
+  .next {
+    right: -2px
   }
 
-  .imageWrapper {
-    height: 160px;
-  }
-
-  .gridImage {
-    height: 120px;
+  .grid {
+    gap: 14px
   }
 }
 
-/* subtle shine animation */
-@keyframes shine {
-  0% {
-    transform: translateX(-120%);
-  }
-
-  100% {
-    transform: translateX(120%);
+@media (max-width: 720px) {
+  .gridCard {
+    grid-column: span 12
   }
 }
 
-.card::after {
-  content: "";
-  position: absolute;
-  left: -40%;
-  top: 0;
-  width: 60%;
-  height: 100%;
-  transform: skewX(-18deg);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
-  pointer-events: none;
-  opacity: 0.0;
-  transition: opacity .4s ease;
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important
+  }
 }
-
-.card:hover::after {
-  opacity: 0.9;
-  animation: shine 1.2s linear;
-}
-
-/* Accessibility focus */
-.card:focus-within,
-.gridCard:focus-within {
-  outline: 2px solid rgba(255, 46, 99, 0.14);
-}
-
-/* End of module */

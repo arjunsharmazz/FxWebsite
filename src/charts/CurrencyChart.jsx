@@ -18,6 +18,7 @@ import Loading from "../animcomponents/Loading";
 import AnytimeSection from "../componenets/AnytimeSection";
 import TradeSection from "../componenets/TradeSection";
 import FaqSection from "../componenets/FaqSection";
+import LiveConverter from "../animcomponents/LiveConverter";
 
 const CurrencyChart = () => {
   const [data, setData] = useState([]);
@@ -67,6 +68,7 @@ const CurrencyChart = () => {
 
   return (
     <>
+
     <div className={styles.container}>
       <Education2 name="Live forex"/>
 
@@ -132,6 +134,7 @@ const CurrencyChart = () => {
         ))}
       </div>
     </div>
+    <LiveConverter />
     <CurrencyHeatmap />
     <AnytimeSection />
     <TradeSection />

@@ -15,7 +15,7 @@ const data = [
   },
   {
     feedback: "Real-time insights helped me take better trading decisions.",
-    name: "Sophia Sharma",
+    name: "Krthik Sharma",
     role: "Stock Trader",
     img: img2,
   },
@@ -28,13 +28,13 @@ const data = [
   {
     feedback:
       "Loved the clean UI and smooth navigation. Made trading stress-free!",
-    name: "Neha Kapoor",
+    name: "Kabir Kapoor",
     role: "Day Trader",
     img: img2,
   },
   {
     feedback: "Excellent customer support and fast execution. Can’t ask for more!",
-    name: "Ananya Verma",
+    name: "Aryan Verma",
     role: "Long-term Investor",
     img: img1,
   },

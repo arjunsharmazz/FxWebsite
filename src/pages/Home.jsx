@@ -2,15 +2,11 @@ import React from "react";
 import Hero from "../componenets/Hero.jsx";
 import KeyFeatures from "../componenets/KeyFeatures.jsx";
 import MarketTicker from "../componenets/MarketTicker.jsx";
-import QuickAccess from "../componenets/QuickAccess.jsx";
-import TrustSection from "../componenets/TrustSection.jsx";
 import FaqSection from "../componenets/FaqSection.jsx";
 import NewsletterSection from "../componenets/NewsletterSection.jsx";
 import TradeSimulator from "../componenets/TradeSimulator.jsx";
 import SecurityHighlights from "../componenets/SecurityHighlights.jsx";
-import HowItWorks from "../componenets/HowItWorks.jsx";
 import CTABanner from "../componenets/CTABanner.jsx";
-import AccountTypes from "../componenets/AccountTypes.jsx";
 import TradingPlatforms from "../componenets/TradingPlatforms.jsx";
 import EducationResources from "../componenets/EducationResources.jsx";
 import Two from "../componenets/Two.jsx";
@@ -20,8 +16,8 @@ import AnytimeSection from "../componenets/AnytimeSection.jsx";
 import StepsSection from "../componenets/StepsSection.jsx";
 import NetworkSection from "../componenets/NetworkSection.jsx";
 import TradeSection from "../componenets/TradeSection.jsx";
-import TeamCarousel from "../componenets/TeamCarousel.jsx";
 import Paymentslogo from "../componenets/Paymentslogo.js";
+import SupportSection from "../animcomponents/SupportSection.jsx";
 
 
 const Home = () => {
@@ -43,6 +39,7 @@ const Home = () => {
       <FaqSection />
       <AboutSection />
       <EducationResources />
+      <SupportSection />
       <NewsletterSection />
       <CTABanner />
     </>

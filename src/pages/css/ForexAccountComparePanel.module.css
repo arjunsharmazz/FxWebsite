@@ -1,205 +1,359 @@
-:root{
+:root {
     --bg: #0b0f13;
-    --card: rgba(255, 255, 255, 0.03);
+    --surface: rgba(255, 255, 255, .02);
+    --card: rgba(255, 255, 255, .03);
+    --border: rgba(255, 255, 255, .06);
+    --muted: #9fb0c3;
+    --text: #eaf6f9;
     --accent: #ff0844;
     --accent-2: #ff2e63;
-    --muted: #9fb0c3;
+    --radius-lg: 16px;
+    --radius-md: 12px;
+    --blur: 14px;
 }
 
-.container{
-    /* max-width: 1100px; */
-    margin: 28px auto;
-    padding: 22px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.00));
-    border-radius: 14px;
-    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.04);
-    color: #eaf6f9;
+* {
+    box-sizing: border-box
 }
 
-.header{
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+html {
+    -webkit-text-size-adjust: 100%
 }
 
-.title{
+body {
     margin: 0;
-    font-size: 20px;
-    font-weight: 800;
+    background: radial-gradient(900px 500px at 10% -10%, rgba(255, 255, 255, .03), transparent 40%), var(--bg);
+    color: var(--text);
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial
+}
+
+.container {
+    margin: 28px auto;
+    padding: clamp(16px, 3.5vw, 22px);
+    background: linear-gradient(180deg, rgba(255, 255, 255, .02), rgba(255, 255, 255, .01));
+    border-radius: var(--radius-lg);
+    box-shadow: 0 18px 60px rgba(0, 0, 0, .6);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(var(--blur));
+    max-width: min(1100px, 100%);
+}
+
+.header {
+    display: grid;
+    gap: 8px
+}
+
+.title {
+    margin: 0;
+    font-size: clamp(18px, 2.2vw, 22px);
+    font-weight: 900;
+    letter-spacing: .2px;
     background: linear-gradient(90deg, var(--accent), var(--accent-2));
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent
 }
 
-.subtitle{
+.subtitle {
     margin: 0;
     color: var(--muted);
-    font-size: 13px;
+    font-size: 13px
 }
 
-.selectorRow{
-    display: flex;
-    gap: 16px;
-    color: white;
-    align-items: center;
-    margin-top: 14px;
+.selectorRow {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    align-items: end;
+    margin-top: 14px
 }
 
-.selectWrap{
+.selectWrap {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 6px
 }
 
-.label{
+.label {
     color: var(--muted);
-    font-size: 12px;
-    /* background-color: #002; */
+    font-size: 12px
 }
 
-.select{
-    padding: 10px 12px;
+.select {
+    padding: 12px 14px;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.04);
-    /* color: #eaf6f9; */
-    color: red;
+    background: var(--surface);
+    border: 1px solid rgba(255, 255, 255, .08);
+    color: #fff;
+    font-size: 14px;
+    appearance: none;
+    outline: 0;
+    transition: border-color .18s, box-shadow .18s, background .18s;
+    background-image: linear-gradient(45deg, transparent 50%, #ffd1db 50%), linear-gradient(135deg, #ffd1db 50%, transparent 50%);
+    background-position: calc(100% - 18px) 50%, calc(100% - 12px) 50%;
+    background-size: 6px 6px;
+    background-repeat: no-repeat
+}
+/* 👇 dropdown khulne par options ka background */
+.select option {
+  background-color: #000;   /* pure black background */
+  color: #fff;        
+  border-radius: 10px;     /* text white */
 }
 
-.vs{
+.select:focus {
+    border-color: rgba(255, 8, 68, .6);
+    box-shadow: 0 0 0 3px rgba(255, 8, 68, .18)
+}
+
+.vs {
+    align-self: center;
+    justify-self: center;
     font-weight: 800;
     padding: 8px 12px;
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 8px;
+    background: rgba(255, 255, 255, .03);
+    border-radius: 10px
 }
 
-.cardsRow{
-    display: flex;
+.cardsRow {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
     gap: 18px;
-    margin-top: 18px;
-    flex-wrap: wrap;
+    margin-top: 18px
 }
 
-.card{
-    flex: 1 1 320px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+.card {
+    grid-column: span 6;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .02), rgba(255, 255, 255, .01));
     border-radius: 12px;
     padding: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, .05);
+    transition: transform .18s, box-shadow .18s, border-color .18s
 }
 
-.cardHighlight{
-    box-shadow: 0 12px 36px rgba(255, 8, 68, 0.08);
-    border: 1px solid rgba(255, 46, 99, 0.14);
-    transform: translateY(-4px);
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 44px rgba(255, 8, 68, .12);
+    border-color: rgba(255, 46, 99, .16)
 }
 
-.cardHead{
+.cardHighlight {
+    box-shadow: 0 16px 44px rgba(255, 8, 68, .16);
+    border-color: rgba(255, 46, 99, .22);
+    transform: translateY(-3px)
+}
+
+.cardHead {
     display: flex;
     gap: 12px;
-    align-items: center;
+    align-items: center
 }
 
-.icon{
+.icon {
     width: 48px;
     height: 48px;
     display: grid;
     place-items: center;
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 10px;
-    font-size: 20px;
+    background: rgba(255, 255, 255, .03);
+    border-radius: 12px;
+    font-size: 18px;
+    color: #fff
 }
 
-.accName{
-    font-weight: 700;
-    font-size: 16px;
+.accName {
+    font-weight: 800;
+    font-size: 16px
 }
 
-.accBest{
+.accBest {
     color: var(--muted);
-    font-size: 12px;
+    font-size: 12px
 }
 
-.features{
+.features {
     margin: 12px 0 0;
     padding: 0;
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 8px
 }
 
-.features li{
-    color: #dff9fb;
+.features li {
+    color: #eaf6f9;
     font-size: 14px;
+    line-height: 1.35
 }
 
-.better{
-    background: linear-gradient(90deg, rgba(255, 8, 68, 0.06), rgba(255, 46, 99, 0.03));
+.better {
+    background: linear-gradient(90deg, rgba(255, 8, 68, .08), rgba(255, 46, 99, .04));
     padding: 6px 8px;
-    border-radius: 8px;
+    border-radius: 8px
 }
 
-.compareTable{
+.compareTable {
     width: 100%;
     margin-top: 18px;
     border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 12px
 }
 
 .compareTable th,
-.compareTable td{
+.compareTable td {
     padding: 12px 14px;
     text-align: left;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, .05)
 }
 
-.compareTable thead th{
+.compareTable thead th {
     color: var(--muted);
-    font-size: 13px;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: .02em
 }
 
-.highlightCell{
-    background: linear-gradient(90deg, rgba(255, 8, 68, 0.06), rgba(255, 46, 99, 0.03));
-    border-radius: 6px;
+.highlightCell {
+    background: linear-gradient(90deg, rgba(255, 8, 68, .08), rgba(255, 46, 99, .04));
+    border-radius: 6px
 }
 
-.actions{
+.actions {
     display: flex;
     gap: 12px;
     justify-content: flex-end;
     margin-top: 16px;
+    flex-wrap: wrap
 }
 
-.primary{
-    padding: 10px 16px;
+.primary {
+    padding: 12px 18px;
     background: linear-gradient(90deg, var(--accent), var(--accent-2));
     border: none;
-    color: #002;
+    color: #fff;
     font-weight: 800;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
+    box-shadow: 0 12px 36px rgba(255, 8, 68, .16);
+    transition: transform .16s, box-shadow .16s, opacity .16s
 }
 
-.secondary{
-    padding: 10px 16px;
+.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 44px rgba(255, 8, 68, .2)
+}
+
+.primary:focus-visible {
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(255, 8, 68, .22)
+}
+
+.secondary {
+    padding: 12px 18px;
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, .08);
     color: var(--muted);
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
+    transition: border-color .16s, color .16s
 }
 
-@media(max-width:720px){
-    .cardsRow{
+.secondary:hover {
+    border-color: rgba(255, 255, 255, .18);
+    color: #fff
+}
+
+.table-responsive {
+    width: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin
+}
+
+@media(max-width:1024px) {
+    .cardsRow {
+        grid-template-columns: repeat(8, 1fr)
+    }
+
+    .card {
+        grid-column: span 4
+    }
+}
+
+@media(max-width:820px) {
+    .selectorRow {
+        grid-template-columns: 1fr 40px 1fr
+    }
+
+    .vs {
+        padding: 6px 10px
+    }
+
+    .cardsRow {
+        grid-template-columns: repeat(6, 1fr)
+    }
+
+    .card {
+        grid-column: span 6
+    }
+}
+
+@media(max-width:640px) {
+    .selectorRow {
+        grid-template-columns: 1fr;
+        gap: 10px
+    }
+
+    .vs {
+        display: none
+    }
+
+    .actions {
         flex-direction: column;
+        align-items: stretch
     }
 
-    .vs{
-        display: none;
+    .primary,
+    .secondary {
+        width: 100%
     }
 
-    .container{
-        padding: 16px;  
+    .compareTable thead {
+        display: none
+    }
+
+    .compareTable tr {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-bottom: 12px;
+        background: rgba(255, 255, 255, .02);
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
+        overflow: hidden
+    }
+
+    .compareTable td {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, .06)
+    }
+
+    .compareTable td:last-child {
+        border-bottom: 0
+    }
+
+    .compareTable td::before {
+        content: attr(data-label);
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: .02em
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+    * {
+        transition: none !important
     }
 }

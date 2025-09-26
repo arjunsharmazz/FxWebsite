@@ -8,7 +8,7 @@ const platforms = [
     desc: "World’s most popular trading platform with advanced charting, multiple order types, and expert advisors (EAs).",
     icon: "📊",
   },
-  {
+  { 
     name: "MetaTrader 5 (MT5)",
     desc: "Next-gen platform offering faster execution, advanced analytics, and multi-asset trading support.",
     icon: "⚡",
