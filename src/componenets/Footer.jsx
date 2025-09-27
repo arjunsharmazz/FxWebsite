@@ -26,7 +26,7 @@ const Footer = () => {
           </p>
           <form className={styles.newsletterForm}>
             <input type="email" placeholder="Enter Your Email Address" required />
-            <input type="date" required />
+            {/* <input type="date" required /> */}
             <button type="submit">Sign Up</button>
           </form>
           <p className={styles.note}>
