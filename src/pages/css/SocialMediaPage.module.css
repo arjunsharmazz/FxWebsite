@@ -6,31 +6,35 @@
 }
 
 /* ==== Headings Trendy ==== */
+/* ==== Headings Trendy ==== */
 h1, h2, h3 {
   font-family: "Inter", sans-serif;
   font-weight: 700;
   letter-spacing: -0.5px;
 }
 
+/* Hero main heading in red gradient */
 .hero h1 {
   font-size: 3.8rem;
   line-height: 1.2;
   margin-bottom: 20px;
-  background: linear-gradient(90deg, #ff004c, #00c3ff);
+  background: linear-gradient(90deg, #ff002e, #ff6b6b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+/* Section headings in red gradient */
 .socials h2,
 .trust h2,
 .community h2,
 .stories h2 {
   font-size: 2.6rem;
   margin-bottom: 25px;
-  background: linear-gradient(90deg, #ff4d6d, #3286a0);
+  background: linear-gradient(90deg, #ff1f3d, #ff7a86);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 
 /* ==== Hero ==== */
 .hero {

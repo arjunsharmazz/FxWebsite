@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./css/AnytimeSection.module.css";
 import { motion } from "framer-motion";
-import img from "../assets/Dashboard.png";
+import img from "../assets/Dashboar.jpeg";
 
 export default function AnytimeSection() {
   const contentVariant = {

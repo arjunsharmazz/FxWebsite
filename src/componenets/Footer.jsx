@@ -62,7 +62,7 @@ const Footer = () => {
           <ul>
             <li><Link to="/privacy">Privacy Policy</Link></li>
             <li><Link to="/terms">Terms & Conditions</Link></li>
-            <li><Link to="/disclaimer">Disclaimer</Link></li>
+            {/* <li><Link to="/disclaimer">Disclaimer</Link></li> */}
           </ul>
         </motion.div>
       </motion.div>
@@ -80,10 +80,10 @@ const Footer = () => {
           <a href="#"><FaTelegramPlane /></a>
         </div>
         <div className={styles.bottomLinks}>
-          <Link to="/sitemap">Site Map</Link>
+          {/* <Link to="/sitemap">Site Map</Link> */}
           <Link to="/privacy">Privacy</Link>
           <Link to="/terms">Terms</Link>
-          <Link to="/userContent">User Content Terms</Link>
+          {/* <Link to="/userContent">User Content Terms</Link> */}
         </div>
         <p>⚠️ Trading involves risk. Please trade responsibly.</p>
         <p>© {new Date().getFullYear()} Paykuber Fx. All rights reserved.</p>
