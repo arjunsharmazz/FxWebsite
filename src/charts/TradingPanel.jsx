@@ -357,6 +357,7 @@ export default function TradingPanel() {
         </div>
       </div>
     </div>
+          <Education2 name="Forex Market" />
         <LiveConverter />
     </>
   );

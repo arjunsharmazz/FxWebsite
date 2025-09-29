@@ -26,7 +26,8 @@ const Home = () => {
       <Hero />  
       <AnytimeSection />
       <MarketTicker />
-      <KeyFeatures />
+
+      <KeyFeatures /> 
       <Two />
       <TradingPlatforms />
       <NetworkSection />

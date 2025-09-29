@@ -134,6 +134,7 @@ const CurrencyChart = () => {
         ))}
       </div>
     </div>
+    <Education2 name="Forex Market" />
     <LiveConverter />
     <CurrencyHeatmap />
     <AnytimeSection />

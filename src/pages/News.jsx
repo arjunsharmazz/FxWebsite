@@ -4,8 +4,7 @@ import styles from "./css/News.module.css";
 import StepsSection from "../componenets/StepsSection";
 import Education2 from "../animcomponents/Education2";
 import  newsData from "../dummydata/newsData.js"
-
-
+import NewsletterSection from "../componenets/NewsletterSection.jsx";
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0 }
@@ -99,7 +98,135 @@ const News = () => {
         ))}
       </div>
     </div>
+
+    {/* =========================
+    Market Highlights (3-up)
+========================= */}
+<motion.section
+  className={styles.highlights}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+  transition={{ duration: 0.6 }}
+  variants={fadeInUp}
+>
+  <div className={styles.sectionHead}>
+    <h2>Market Highlights</h2>
+    <p>Quick bites from today’s forex moves.</p>
+  </div>
+
+  <div className={styles.highlightsGrid}>
+    {newsData.slice(0, 3).map((n) => (
+      <article key={`hi-${n.id}`} className={styles.highlightCard}>
+        <img src={n.img} alt={n.title} />
+        <div className={styles.highlightBody}>
+          <span className={styles.tag}>{n.tag}</span>
+          <h3>{n.title}</h3>
+          <p>{n.desc}</p>
+          <div className={styles.cardMeta}>
+            <span className={styles.date}>{n.date}</span>
+            <button className={styles.readMoreSm}>Read</button>
+          </div>
+        </div>
+      </article>
+    ))}
+  </div>
+</motion.section>
+
+{/* =========================
+    Editor's Picks (horizontal cards)
+========================= */}
+<motion.section
+  className={styles.editors}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+  transition={{ duration: 0.6 }}
+  variants={fadeInUp}
+>
+  <div className={styles.sectionHead}>
+    <h2>Editor’s Picks</h2>
+    <p>Handpicked reads to level up your strategy.</p>
+  </div>
+
+  <div className={styles.editorsRow}>
+    {newsData.slice(1, 5).map((n) => (
+      <article key={`ep-${n.id}`} className={styles.editorsItem}>
+        <div className={styles.editorsThumb}>
+          <img src={n.img} alt={n.title} />
+        </div>
+        <div className={styles.editorsContent}>
+          <span className={styles.tag}>{n.tag}</span>
+          <h3>{n.title}</h3>
+          <p>{n.desc}</p>
+          <div className={styles.listFooter}>
+            <span className={styles.date}>{n.date}</span>
+            <button className={styles.readMore}>Read More</button>
+          </div>
+        </div>
+      </article>
+    ))}
+  </div>
+</motion.section>
+
+{/* =========================
+    Topics / Tags (chips)
+========================= */}
+<motion.section
+  className={styles.topics}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+  transition={{ duration: 0.6 }}
+  variants={fadeInUp}
+>
+  <div className={styles.sectionHeadCompact}>
+    <h3>Browse by Topic</h3>
+  </div>
+  <div className={styles.chips}>
+    {[...new Set(newsData.map(n => n.tag))].slice(0, 12).map((t, i) => (
+      <button key={`chip-${i}`} className={styles.chip}>{t}</button>
+    ))}
+  </div>
+</motion.section>
+
+{/* =========================
+    From the Blog (2-column list)
+========================= */}
+<motion.section
+  className={styles.blog}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+  transition={{ duration: 0.6 }}
+  variants={fadeInUp}
+>
+  <div className={styles.sectionHead}>
+    <h2>From the Blog</h2>
+    <p>Deep dives, guides, and thought pieces.</p>
+  </div>
+
+  <div className={styles.blogGrid}>
+    {newsData.slice(0, 6).map((n) => (
+      <article key={`bl-${n.id}`} className={styles.blogItem}>
+        <img src={n.img} alt={n.title} className={styles.blogImg}/>
+        <div className={styles.blogBody}>
+          <span className={styles.tag}>{n.tag}</span>
+          <h3>{n.title}</h3>
+          <p>{n.desc}</p>
+          <div className={styles.blogMeta}>
+            <span className={styles.date}>{n.date}</span>
+            <a className={styles.inlineLink} href="#">Read article →</a>
+          </div>
+        </div>
+      </article>
+    ))}
+  </div>
+</motion.section>
+
+
     <StepsSection/>
+        <NewsletterSection />
     </>
   );
 };
