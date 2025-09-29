@@ -22,6 +22,7 @@ import CTABanner from "../componenets/CTABanner";
 import Marquee3D from "../animcomponents/Marquee3D";
 import phone1 from "../assets/phone1.png";
 import phone2 from "../assets/phone2.png";
+import Education2 from "../animcomponents/Education2";
 
 function NextArrow({ onClick }) {
   return (
@@ -77,6 +78,7 @@ export default function SocialMediaPage() {
   };
 
   return (
+    <>
     <div className={styles.wrapper}>
       {/* ==== Hero Section ==== */}
       <section className={styles.hero}>
@@ -249,7 +251,7 @@ export default function SocialMediaPage() {
       <Marquee3D />
       <FaqSection />
       <CTABanner />
-    </div>
+    </div></>
   );
 }
   

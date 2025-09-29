@@ -99,7 +99,7 @@
   box-shadow: 0px 0px 25px rgba(229, 9, 20, 0.8);
 }
 
-/* ✅ Responsive Styles */
+/*  Responsive Styles */
 @media (max-width: 1024px) {
   .aboutSection {
     gap: 40px;

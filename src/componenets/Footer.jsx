@@ -7,7 +7,7 @@ import { FaLinkedin, FaTwitter, FaTelegramPlane } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      {/* Top Section (Newsletter + Columns) */}
+      
       <motion.div
         className={styles.footerContainer}
         initial={{ opacity: 0, y: 30 }}
@@ -15,7 +15,7 @@ const Footer = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        {/* Newsletter */}
+      
         <motion.div
           className={`${styles.footerSection} ${styles.newsletterSection}`}
           whileHover={{ scale: 1.02 }}

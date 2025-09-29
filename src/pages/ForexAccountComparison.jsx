@@ -1,8 +1,9 @@
-// File: ForexAccountComparison.jsx
+
 import React, { useState, useMemo } from "react";
 import styles from "./css/ForexAccountComparison.module.css";
 import { Link } from "react-router-dom";
 import ForexAccounts from "../animcomponents/ForexAccounts";
+import Education2 from "../animcomponents/Education2";
 
 const ACCOUNT_DATA = [
   { icon: "🤖", name: "Demo", min: "Free", spreads: "Realistic", commission: "No", best: "Beginners" },
@@ -30,6 +31,7 @@ export default function ForexAccountComparison() {
 
   return (
     <>
+      <Education2 name ="Comparison"/>
       <section className={styles.wrapper} aria-labelledby="acc-compare-title">
         <div className={styles.card} role="region" aria-label="Forex account comparison card">
           <header className={styles.header}>
@@ -93,7 +95,6 @@ export default function ForexAccountComparison() {
         </div>
       </section>
 
-      {/* Animation / decorative component (keeps original import) */}
       <ForexAccounts />
     </>
   );

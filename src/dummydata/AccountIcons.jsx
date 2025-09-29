@@ -1,4 +1,4 @@
-// AccountIcons.jsx
+
 import React from "react";
 
 export const DemoIcon = () => (

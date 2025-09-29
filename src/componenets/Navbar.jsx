@@ -69,7 +69,7 @@ export default function Navbar() {
         ))}
       </nav>
 
-      {/* Actions (Desktop) */}
+
       <div className={styles.actions}>
         {isLoggedIn ? (
           <button className={styles.loginBtn} onClick={logout}>

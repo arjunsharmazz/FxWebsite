@@ -43,7 +43,7 @@ const cardVariants = {
     y: 0,
     scale: 1,
     transition: {
-      delay: i * 0.2, // 👈 stagger by index
+      delay: i * 0.2, 
       duration: 0.7,
       ease: "easeOut"
     }
@@ -52,8 +52,7 @@ const cardVariants = {
 
 const KeyFeatures = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" }); // 👈 animate only once when in view
-
+  const isInView = useInView(ref, { once: true, margin: "-50px" }); 
   return (
     <section className={styles.kfSection} ref={ref}>
       <motion.h2

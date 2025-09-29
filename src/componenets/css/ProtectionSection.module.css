@@ -43,8 +43,6 @@
   color: #fff ;
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease, background 0.3s ease;
-
-  /* glassmorphism look */
   /* backdrop-filter: blur(12px); */
   -webkit-backdrop-filter: blur(12px);
 
@@ -78,7 +76,6 @@
   padding: 12px;
   border-radius: 12px;
 
-  /* modern glassy bg behind icon */
   background: rgba(255, 255, 255, 0.07);
   backdrop-filter: blur(10px);
   display: inline-flex;
@@ -167,7 +164,7 @@
   100% { transform: translateY(0); }
 }
 
-/* ================= Responsive ================= */
+
 
 /* Tablet */
 @media (max-width: 992px) {

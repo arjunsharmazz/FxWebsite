@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "./css/Term.module.css";
+import Education2 from "../animcomponents/Education2";
 
 export default function PrivacyPolicy() {
   const sections = [
@@ -51,17 +52,10 @@ export default function PrivacyPolicy() {
   ];
 
   return (
+    <>
+          <Education2 name ="Privacy Policy"/>
     <div className={styles.page}>
       <div className={styles.container}>
-        <motion.h1
-          className={styles.heading}
-          initial={{ opacity: 0, y: -40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-        >
-          Privacy Policy
-        </motion.h1>
-
         <motion.p
           className={styles.intro}
           initial={{ opacity: 0 }}
@@ -92,5 +86,6 @@ export default function PrivacyPolicy() {
         </div>
       </div>
     </div>
+    </>
   );
 }

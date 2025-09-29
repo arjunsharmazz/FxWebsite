@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./css/Login.module.css"; // reuse CSS
+import styles from "./css/Login.module.css"; 
 import { Link, useNavigate } from "react-router-dom";
 import img from "../assets/forex-trading-giving-up.png";
 

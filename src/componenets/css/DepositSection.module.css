@@ -48,8 +48,7 @@
     opacity 0.75s;
 }
 
-/* First image (Hero full background) */
-/* First image (Hero full background - FIT) */
+
 .item:nth-child(1) {
   left: 0;
   top: 0;
@@ -69,7 +68,7 @@
   display: block;
   position: absolute;
   top: 50%;
-  left: 5%; /* content left shift */
+  left: 5%; 
   transform: translateY(-50%);
   width: min(40%, 500px);
   text-align: left;

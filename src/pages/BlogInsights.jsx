@@ -1,12 +1,10 @@
-// File: BlogInsights.jsx
+
 import React from "react";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
 import styles from "./css/BlogInsights.module.css";
+import Education2 from "../animcomponents/Education2";
 
-// Optional: ensure slick CSS is included somewhere globally
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
 
 const NextArrow = (props) => {
   const { onClick } = props;
@@ -79,6 +77,8 @@ const BlogInsights = () => {
   };
 
   return (
+    <>
+    <Education2 name="Our Blog"/>
     <section className={styles.blogWrapper}>
       <div className={styles.bgFx} aria-hidden />
 
@@ -157,6 +157,7 @@ const BlogInsights = () => {
         ))}
       </div>
     </section>
+    </>
   );
 };
 

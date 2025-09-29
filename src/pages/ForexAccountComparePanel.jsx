@@ -14,7 +14,7 @@ const ACCOUNT_DATA = [
   { icon: "📈", name: "Managed (PAMM)", min: "$500+", spreads: "Varies", commission: "Performance fee", best: "Investors" },
 ];
 
-// helper parsers / rankings to decide 'better' for visual comparison
+
 const parseMin = (min) => {
   const m = min && typeof min === "string" ? parseInt(min.replace(/[^0-9]/g, "") || "0") : 0;
   return isNaN(m) ? 999999 : m; // Free => 0, Varies => large

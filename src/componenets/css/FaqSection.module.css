@@ -5,7 +5,7 @@
   color: #ffffff;
   text-align: center;
   position: relative;
-  z-index: 10; /* ensures above bg */
+  z-index: 10;
 }
 
 .heading {
@@ -22,7 +22,7 @@
 }
 
 .faqItem {
-  background: rgba(255, 255, 255, 0.05); /* transparent box */
+  background: rgba(255, 255, 255, 0.05); 
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 12px;
   padding: 1rem 1.5rem;
@@ -57,5 +57,5 @@
 }
 
 .active {
-  border-color: #e11d48; /* red accent */
+  border-color: #e11d48; 
 }

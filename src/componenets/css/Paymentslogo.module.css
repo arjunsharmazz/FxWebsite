@@ -55,7 +55,7 @@
   margin-bottom: 8px;
 }
 
-/* ✅ GRID LAYOUT */
+/*  GRID LAYOUT */
 .miniCardGrid {
   display: grid;
   grid-template-columns: repeat(6, 1fr); /* desktop */
@@ -135,9 +135,6 @@
   transform: translateY(-3px);
 }
 
-/* ---------------------
-   View All Button
---------------------- */
 .btnWrap {
   text-align: center;
   margin-top: 2rem;

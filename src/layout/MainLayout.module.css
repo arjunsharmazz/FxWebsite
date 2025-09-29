@@ -1,11 +1,11 @@
-/* Reset for mobile fit */
+
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-  overflow-y: auto; /* scroll सिर्फ content के लिए */
+  overflow-y: auto; 
 }
 
 .homeContainer {
@@ -16,21 +16,21 @@ html, body {
   height: 100%;
   background-image: url("../assets/back.png");
   background-size: cover;
-  background-position: top center; /* हमेशा ऊपर से शुरू */
+  background-position: top center; 
   background-repeat: no-repeat;
   transition: background-position 0.2s ease;
   overflow: hidden;
   z-index: 0;
 }
 
-/* Mobile पर background-attachment हटाओ */
+
 @media (max-width: 768px) {
   .homeContainer {
-    background-attachment: scroll; /* fixed की जगह scroll */
+    background-attachment: scroll; 
   }
 }
 
-/* Dark overlay for modern look */
+
 .homeContainer::after {
   content: "";
   position: absolute;

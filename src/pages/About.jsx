@@ -20,6 +20,8 @@ export default function About() {
   const yHero = useTransform(scrollY, [0, 400], [0, 60]);
 
   return (
+    <>
+      <Education2 name ="About Us"/>
     <div className={styles.page}>
       <section className={styles.hero}>
         <motion.div className={styles.heroArt} style={{ y: yHero }}>
@@ -161,5 +163,6 @@ export default function About() {
         </motion.a>
       </section>
     </div>
+    </>
   );
 }

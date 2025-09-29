@@ -13,7 +13,7 @@ const MainLayout = () => {
     <>
 
       <div ref={bgRef} className={styles.homeContainer}>
-        {/* <StarsEffect /> */}
+        <StarsEffect />
       </div>
 
 

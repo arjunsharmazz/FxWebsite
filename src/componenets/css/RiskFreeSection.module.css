@@ -12,10 +12,9 @@
 }
 
 .heading span {
-  color: #e50914; /* 🔴 Red accent */
+  color: #e50914; 
 }
 
-/* Top Big Card */
 .topCard {
   display: flex;
   align-items: center;

@@ -2,7 +2,7 @@
   padding: 4rem 2rem;
   text-align: center;
   color: #ffffff;
-  background: #000; /* solid black for consistency */
+  background: #000; 
 }
 
 .heading {
@@ -20,7 +20,7 @@
 }
 
 .card {
-  background: #111; /* deep black card */
+  background: #111; 
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1rem;
   padding: 2rem 2.5rem;
@@ -31,7 +31,7 @@
 
 .card:hover {
   transform: translateY(-6px);
-  border: 1px solid #ff3b3b; /* 🔴 red accent */
+  border: 1px solid #ff3b3b;
   box-shadow: 0 8px 20px rgba(255, 0, 0, 0.35);
 }
 
@@ -39,7 +39,7 @@
   font-size: 1.5rem;
   display: block;
   margin-bottom: 0.5rem;
-  color: #facc15; /* ⭐ gold stars stay same */
+  color: #facc15; 
 }
 
 .number {

@@ -45,12 +45,11 @@ export default function LiveForex() {
       const current = data?.[base.toLowerCase()] ?? {};
       setRates(current);
 
-      // update history efficiently
       setHistory((prev) => {
         const next = { ...prev };
         Object.entries(current).forEach(([sym, val]) => {
           const arr = next[sym] ? [...next[sym], Number(val)] : [Number(val)];
-          next[sym] = arr.slice(-60); // keep last 60
+          next[sym] = arr.slice(-60); 
         });
         return next;
       });
@@ -67,7 +66,7 @@ export default function LiveForex() {
     fetchRates();
     const id = setInterval(() => {
       if (mountedRef.current) fetchRates();
-    }, 6000); // ⬅️ thoda bada interval, smoother
+    }, 6000); 
     return () => {
       mountedRef.current = false;
       clearInterval(id);
@@ -124,7 +123,7 @@ export default function LiveForex() {
   const selLower = (selected || "").toLowerCase();
   const selHistory = history[selLower] || [];
 
-  // chart dataset only for selected
+ 
   const chartData = useMemo(() => {
     return {
       labels: selHistory.map((_, i) => i + 1),
@@ -154,7 +153,7 @@ export default function LiveForex() {
   const chartOptions = {
     responsive: true,
     maintainAspectRatio: false,
-    animation: { duration: 300 }, // smoother animations
+    animation: { duration: 300 }, 
     plugins: {
       legend: { display: false },
       tooltip: {

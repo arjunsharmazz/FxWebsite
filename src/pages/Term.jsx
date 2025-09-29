@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./css/Term.module.css";
 import { motion } from "framer-motion";
+import Education2 from "../animcomponents/Education2";
 export default function Terms() {
 const sections = [
   {
@@ -107,17 +108,10 @@ const sections = [
 
 
  return (
+  <>
+    <Education2 name ="Terms & Conditions"/>
     <div className={styles.page}>
       <div className={styles.container}>
-        <motion.h1
-          className={styles.heading}
-          initial={{ opacity: 0, y: -40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-        >
-          Terms & Conditions
-        </motion.h1>
-
         <motion.p
           className={styles.intro}
           initial={{ opacity: 0 }}
@@ -148,5 +142,6 @@ const sections = [
         </div>
       </div>
     </div>
+    </>
   );
 }
