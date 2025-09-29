@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Playfair+Display:wght@400;700&display=swap');
 
 :root {
@@ -11,21 +10,21 @@
   --accent-gradient: linear-gradient(90deg, #ffffff 0%, #c9d6ff 40%, #ffd1e8 100%);
   --heading-letterspacing: -0.02em;
 
-  /* new animation variables - tweak to change speed/strength */
+
   --heading-pulse-duration: 5.5s;
   --heading-pulse-ease: cubic-bezier(.2, .8, .25, 1);
   --heading-brightness-min: 0.92;
-  /* a bit darker */
+
   --heading-brightness-max: 1.06;
-  /* a bit lighter */
+
   --heading-gradient-size: 200%;
-  /* larger than 100% so background-position shift is visible */
+
 }
 
-/* Global page styles */
 
 
-/* Container */
+
+
 .pageWrap {
   max-width: 1600px;
   margin: 0 auto;
@@ -33,26 +32,26 @@
   box-sizing: border-box;
 }
 
-/* Slider area */
+
 .postSliders {
   /* padding-top: calc(60px * 1.5); */
 }
 
-/* Fancy section heading */
+
 .sectionHeading {
   font-family: var(--accent-font);
   font-weight: 700;
-  /* use clamp-based size for better responsiveness */
+  /* use clamp-based size for better responsiveness *
   font-size: var(--heading-font-size);
   /* margin-bottom: -3vw; */
   text-align: center;
   line-height: 1.02;
   letter-spacing: var(--heading-letterspacing);
   text-transform: none;
-  /* change to uppercase if you want bolder feel */
+  
   position: relative;
 
-  /* gradient text using background-clip */
+  
   background-image: var(--accent-gradient);
   background-size: var(--heading-gradient-size);
   background-repeat: no-repeat;
@@ -61,29 +60,29 @@
   background-clip: text;
   color: transparent;
 
-  /* subtle glow / depth */
+  
   text-shadow:
     0 6px 16px rgba(0, 0, 0, 0.6),
-    /* depth shadow */
+  
     0 1px 0 rgba(255, 255, 255, 0.02);
-  /* tiny highlight */
+  
 
-  /* micro animation to feel alive (optional) */
+  
   transition: transform 300ms ease, filter 300ms ease;
 
-  /* apply the continuous subtle light/dark + gradient flow */
+  
   animation:
     headingGradientFlow var(--heading-pulse-duration) var(--heading-pulse-ease) infinite,
     headingBrightnessPulse var(--heading-pulse-duration) calc(var(--heading-pulse-duration) / 2) var(--heading-pulse-ease) infinite;
 }
 
-/* Hover/interaction effect (desktop) */
+
 .sectionHeading:hover {
   transform: translateY(-6px) scale(1.01);
   filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.55));
 }
 
-/* Smaller headings / utility */
+
 .sectionHeading .sub {
   display: block;
   font-family: var(--primary-font);
@@ -96,7 +95,7 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* ✅ Tablet (max 1024px) */
+
 @media (max-width: 1024px) {
   .sectionHeading {
     font-size: clamp(2.4rem, 8vw, 6.5rem);
@@ -111,18 +110,18 @@
     transform: none;
   }
 
-  /* disable hover float on touch */
+
 }
 
-/* ✅ Mobile (max 600px) */
+
 @media (max-width: 600px) {
   .sectionHeading {
     font-size: clamp(2.2rem, 12vw, 5.5rem);
-    /* large but fits screen */
+
     margin-bottom: -2vw;
     letter-spacing: -0.015em;
     text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-    /* reduce animation intensity on small screens for comfort */
+
     animation-duration: calc(var(--heading-pulse-duration) * 1.1);
   }
 
@@ -131,7 +130,7 @@
   }
 }
 
-/* Optional: a classy small-cap style for subtitles */
+
 .smallCaps {
   font-variant: small-caps;
   letter-spacing: 0.06em;
@@ -139,11 +138,6 @@
   font-weight: 600;
 }
 
-/* ------------------------------
-   Keyframes for animated effect
-   ------------------------------ */
-
-/* move the gradient horizontally to create a flowing light effect */
 @keyframes headingGradientFlow {
   0% {
     background-position: 0% 50%;
@@ -158,7 +152,7 @@
   }
 }
 
-/* subtle brightness pulse to make heading go slightly light -> dark -> light */
+
 @keyframes headingBrightnessPulse {
   0% {
     filter: brightness(var(--heading-brightness-max));
@@ -181,7 +175,7 @@
   }
 }
 
-/* Respect user motion preferences */
+
 @media (prefers-reduced-motion: reduce) {
   .sectionHeading {
     animation: none !important;

@@ -5,7 +5,7 @@ const ChartComponent = () => {
   const chartContainerRef = useRef();
 
   useEffect(() => {
-    // create chart instance
+    
     const chart = createChart(chartContainerRef.current, {
       width: chartContainerRef.current.clientWidth,
       height: 400,
@@ -28,7 +28,7 @@ const ChartComponent = () => {
       },
     });
 
-    // add candlestick series
+    
     const candleSeries = chart.addCandlestickSeries({
       upColor: "#4bffb5",
       downColor: "#ff4976",
@@ -37,14 +37,14 @@ const ChartComponent = () => {
       wickDownColor: "#ff4976",
     });
 
-    // set sample data
+    
     candleSeries.setData([
       { time: "2025-09-01", open: 100, high: 110, low: 95, close: 105 },
       { time: "2025-09-02", open: 105, high: 115, low: 102, close: 110 },
       { time: "2025-09-03", open: 110, high: 120, low: 108, close: 115 },
     ]);
 
-    // handle resizing
+    
     const handleResize = () => {
       chart.applyOptions({ width: chartContainerRef.current.clientWidth });
     };

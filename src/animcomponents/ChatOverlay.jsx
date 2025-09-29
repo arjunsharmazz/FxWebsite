@@ -7,7 +7,7 @@ export default function ChatOverlay({ onClose }) {
     <div className={styles.overlay} onClick={onClose}>
       <div
         className={styles.drawer}
-        onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside
+        onClick={(e) => e.stopPropagation()} 
       >
         <button onClick={onClose} className={styles.closeBtn}>
           ×

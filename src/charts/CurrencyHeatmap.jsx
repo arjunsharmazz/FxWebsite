@@ -4,9 +4,9 @@ import Education2 from "../animcomponents/Education2";
 
 const currencies = ["EUR", "USD", "GBP", "JPY", "CHF", "AUD", "CNY", "CAD", "INR"];
 
-// random value generator for demo (API connect कर सकते हो बाद में)
+// random value generator for demo (API connnneect karunga badd m )
 const getRandomChange = () => {
-  const num = (Math.random() * 0.6 - 0.3).toFixed(2); // -0.30% to +0.30%
+  const num = (Math.random() * 0.6 - 0.3).toFixed(2);
   return num;
 };
 
@@ -26,7 +26,7 @@ const CurrencyHeatmap = () => {
 
   useEffect(() => {
     generateMatrix();
-    const interval = setInterval(generateMatrix, 5000); // हर 5 सेकंड में update
+    const interval = setInterval(generateMatrix, 5000); // every 5 sec m  update
     return () => clearInterval(interval);
   }, []);
 

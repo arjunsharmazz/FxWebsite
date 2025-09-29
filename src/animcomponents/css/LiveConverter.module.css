@@ -167,9 +167,8 @@ body{ margin:0; background:#0b1220; font-family: ui-sans-serif, system-ui, -appl
 /* Note */
 .note{ margin-top:12px; color:#A1A1AA; font-size:.9rem; text-align:center; }
 
-/* ===== Responsive Breakpoints ===== */
 
-/* ≥ 640px: two columns + hero CTA inline */
+
 @media (min-width: 640px){
   .row{
     grid-template-columns: 1fr 1fr 52px 1fr;
@@ -179,30 +178,27 @@ body{ margin:0; background:#0b1220; font-family: ui-sans-serif, system-ui, -appl
   .cta{ width:auto; }
 }
 
-/* ≥ 900px: original layout + richer blur/perf on desktop */
 @media (min-width: 900px){
   .card{ padding:18px; backdrop-filter: blur(var(--blur)) saturate(140%); }
   .tab{ backdrop-filter: blur(var(--blur)); }
 }
 
-/* Ultra-small fixes ≤ 360px */
 @media (max-width: 360px){
   .tab{ padding:8px 12px; }
   .amount, .select{ font-size:1rem; }
 }
 
-/* ===== Motion & Platform Polish ===== */
+
 @media (prefers-reduced-motion: reduce){
   *{ animation: none !important; transition: none !important; }
   .swap:hover{ transform:none; }
 }
 
-/* iOS input zoom prevention */
+
 @supports (-webkit-touch-callout: none){
   input, select, button{ font-size:16px; }
 }
 
-/* Respect safe areas on notched devices */
 .wrap{
   padding-left: max(12px, env(safe-area-inset-left));
   padding-right: max(12px, env(safe-area-inset-right));

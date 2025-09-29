@@ -72,7 +72,7 @@ const Marquee3D = () => {
         <MarqueeColumn data={secondRow} />
       </div>
 
-      {/* Fade overlay for 3D look */}
+
       <div className={`${styles.overlay} ${styles.top}`}></div>
       <div className={`${styles.overlay} ${styles.bottom}`}></div>
       <div className={`${styles.overlay} ${styles.left}`}></div>

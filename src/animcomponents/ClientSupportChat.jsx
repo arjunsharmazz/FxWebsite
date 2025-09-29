@@ -1,4 +1,4 @@
-// ClientSupportChat.jsx
+
 import React, { useState, useRef, useEffect } from "react";
 import styles from "./css/ClientSupportChat.module.css";
 
@@ -12,7 +12,7 @@ export default function ClientSupportChat() {
   const listRef = useRef(null);
 
   useEffect(() => {
-    // auto-scroll to bottom when messages change
+  
     if (listRef.current) {
       listRef.current.scrollTop = listRef.current.scrollHeight;
     }
@@ -29,7 +29,7 @@ export default function ClientSupportChat() {
     setMessages((m) => [...m, newMsg]);
     setInput("");
 
-    // simulate agent typing + response
+    
     setTyping(true);
     setTimeout(() => {
       setMessages((m) => [

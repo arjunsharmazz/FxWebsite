@@ -5,7 +5,7 @@ import {
   FaChartLine,
   FaBell,
   FaPaperPlane,
-  FaArrowsRotate, // ✅ instead of FaSync
+  FaArrowsRotate, 
 } from "react-icons/fa6";
 import { createChart } from "lightweight-charts";
 
@@ -21,7 +21,7 @@ const CURRENCIES = [
 
 const REFRESH_MS = 15000;
 
-/* ---------- helpers ---------- */
+
 async function safeJson(url) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);

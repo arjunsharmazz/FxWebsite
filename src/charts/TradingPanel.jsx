@@ -165,7 +165,7 @@ export default function TradingPanel() {
           candleSeriesRef.current.update(newCandle);
         }
 
-        // update open trades P/L
+        
         setTrades((prev) =>
           prev.map((t) => {
             if (t.status !== "open") return t;
