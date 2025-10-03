@@ -1,4 +1,4 @@
-// server.js
+
 require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -16,10 +16,8 @@ connectDB();
 
 app.use(bodyParser.json());
 
-// API routes
 app.use("/api/auth", authRoutes);
 
-// example protected route
 app.get("/api/profile", authMiddleware, (req, res) => {
   res.json({ user: req.user });
 });
