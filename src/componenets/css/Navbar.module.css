@@ -24,9 +24,12 @@
   font-size: 1.6rem;
   font-weight: 700;
   letter-spacing: 1px;
+
+  font-family: 'Montserrat', sans-serif;
+  color: #fff; /* white color */
 }
 .logo a {
-  color: #ff2c2c;
+  color: #fff;
   text-decoration: none;
   transition: all 0.3s ease;
 }

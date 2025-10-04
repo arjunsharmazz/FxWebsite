@@ -26,6 +26,7 @@ import ForexAccountComparison from "./pages/ForexAccountComparison";
 import ForexAccountComparePanel from "./pages/ForexAccountComparePanel";
 
 import ChatOverlay from "./animcomponents/ChatOverlay.jsx";
+import Profile from "./pages/Profile.jsx";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -66,6 +67,7 @@ function App() {
               <Route path="/blog" element={<BlogInsights />} />
               <Route path="/forexaccount" element={<ForexAccountComparison />} />
               <Route path="/compare" element={<ForexAccountComparePanel />} />
+              <Route path="/profile" element={<Profile />} />
             </Route>
           </Routes>
 

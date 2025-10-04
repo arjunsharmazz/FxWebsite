@@ -25,7 +25,7 @@ const itemVariants = {
 export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
   const { pathname } = useLocation();
-  const { isLoggedIn, logout } = useAuth();
+  const { isLoggedIn } = useAuth();
 
   React.useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
@@ -69,12 +69,12 @@ export default function Navbar() {
         ))}
       </nav>
 
-
       <div className={styles.actions}>
         {isLoggedIn ? (
-          <button className={styles.loginBtn} onClick={logout}>
-            Logout
-          </button>
+          // Only show Account (links to /profile)
+          <Link to="/profile">
+            <button className={styles.loginBtn}>Account</button>
+          </Link>
         ) : (
           <>
             <Link to="/login">
@@ -142,13 +142,15 @@ export default function Navbar() {
 
             <div className={styles.mobileActions}>
               {isLoggedIn ? (
-                <button className={styles.loginBtn} onClick={logout}>
-                  Logout
-                </button>
+                <Link to="/profile">
+                  <button className={styles.loginBtn}>Profile</button>
+                </Link>
               ) : (
                 <>
                   <Link to="/login">
-                    <button style={{border:'2px solid white'}} className={styles.loginBtn}>Login</button>
+                    <button style={{ border: "2px solid white" }} className={styles.loginBtn}>
+                      Login
+                    </button>
                   </Link>
                   <Link to="/signup">
                     <button className={styles.startBtn}>Start Free Trial</button>
@@ -162,3 +164,4 @@ export default function Navbar() {
     </header>
   );
 }
+  

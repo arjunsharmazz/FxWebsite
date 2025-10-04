@@ -5,9 +5,6 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import faqs from "../dummydata/AllFaq.js"
 const FaqSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
-
-
-
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };

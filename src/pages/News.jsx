@@ -99,9 +99,6 @@ const News = () => {
       </div>
     </div>
 
-    {/* =========================
-    Market Highlights (3-up)
-========================= */}
 <motion.section
   className={styles.highlights}
   initial="hidden"
@@ -133,9 +130,6 @@ const News = () => {
   </div>
 </motion.section>
 
-{/* =========================
-    Editor's Picks (horizontal cards)
-========================= */}
 <motion.section
   className={styles.editors}
   initial="hidden"
@@ -169,9 +163,6 @@ const News = () => {
   </div>
 </motion.section>
 
-{/* =========================
-    Topics / Tags (chips)
-========================= */}
 <motion.section
   className={styles.topics}
   initial="hidden"
@@ -190,9 +181,6 @@ const News = () => {
   </div>
 </motion.section>
 
-{/* =========================
-    From the Blog (2-column list)
-========================= */}
 <motion.section
   className={styles.blog}
   initial="hidden"
